@@ -6,11 +6,14 @@ Created on Fri Jul  3 19:25:04 2020
 @author: amelielaurens
 """
 
+
 # Predict an approximation of the final radius for various orifice radius
+
 
 from models_RJS import *
 import numpy
 import matplotlib.pyplot as plt
+
 
 discretisation = 20 #The higher the discretisation number is, the finer the discretisation will be, there will be more points on the graphic
 
@@ -56,7 +59,9 @@ for l in range(discretisation):
 omega_th=numpy.array(omega_th)
 initial_velocity=numpy.array(initial_velocity)
 
+
 nu = kinematic_viscosity(mu, rho)
+
 
 
 
@@ -73,6 +78,7 @@ for i in range(discretisation):
 axes.grid()
 axes.set_xlabel("Radius of the orifice (m)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)
+
 #Choose which title
 #axes.set_title("Final radius as a function of the orifice radius ", fontsize=16)
 #axes.set_title("Super Floss Maxx  / PP", fontsize=16, y=1.)
