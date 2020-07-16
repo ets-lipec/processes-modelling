@@ -11,6 +11,6 @@ The extruded polymer transforms into a fiber to be collected.
 
   2. Predict the critical rotational velocity for jet ejection
 
-\\(\Omega_{th}=\sqrt{\frac{\sigma}{a^{2}\; s_{0}\; \rho}\\)
+$$\Omega_{th}=\sqrt{\frac{\sigma}{a^{2}\; s_{0}\; \rho}}$$
 
   3. Predict the final radius
