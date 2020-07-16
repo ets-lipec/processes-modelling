@@ -19,4 +19,8 @@ $$\Omega$$
 
 \Omega _{th}= \sqrt{\frac{\sigma }{a^{2}*s_{0}*\rho }}
 
+\[\Omega _{th}= \sqrt{\frac{\sigma }{a^{2}*s_{0}*\rho }}\]
+
+
+
   3. Predict the final radius
