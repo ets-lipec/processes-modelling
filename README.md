@@ -13,15 +13,9 @@ The extruded polymer transforms into a fiber to be collected.
 
 h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 
-$$\Omega_{th}=\sqrt{\frac{\sigma}{a^{2}\; s_{0}\; \rho}}$$
+&Omega;<sub>th=&radic;(&sigma;&divide;(a<sub>2 s<sub>0 &rho;)
 
-$$\Omega$$
 
-\\[\Omega\\]
-
-\Omega _{th}= \sqrt{\frac{\sigma }{a^{2}*s_{0}*\rho }}
-
-\[\Omega _{th}= \sqrt{\frac{\sigma }{a^{2}*s_{0}*\rho }}\]
 
 \Omega_{th} : Critical rotational velocity for jet ejection (RPS)
 \sigma : Surface tension (kg/s^2)
