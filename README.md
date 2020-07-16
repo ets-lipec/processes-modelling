@@ -13,9 +13,8 @@ The extruded polymer transforms into a fiber to be collected.
 
 h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 
-&Omega;<sub>th=&radic;(&sigma;&divide;(a<sub>2 s<sub>0 &rho;)
 
-
+\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}
 
 \Omega_{th} : Critical rotational velocity for jet ejection (RPS)
 \sigma : Surface tension (kg/s^2)
@@ -34,19 +33,19 @@ U : Initial axial velocity (m/s)
 Rc : Radius of the collector (m)
 \Omega : Angular velocity (RPS)
 
-    a. Effect of the angular velocity on the final radius
+   a. Effect of the angular velocity on the final radius
 
 final_radius_omega.py
 
-    b. Effect of the collector distance on the final radius
+   b. Effect of the collector distance on the final radius
 
 final_radius_Rc.py
 
-    c. Effect of the orifice radius on the final radius
+   c. Effect of the orifice radius on the final radius
 
 final_radius_a.py
 
-    d. Effect of the reservoir radius on the final radius
+   d. Effect of the reservoir radius on the final radius
 
 final_radius(s0).py
 
