@@ -13,4 +13,6 @@ The extruded polymer transforms into a fiber to be collected.
 
 $$\Omega_{th}=\sqrt{\frac{\sigma}{a^{2}\; s_{0}\; \rho}}$$
 
+$$\Omega$$
+
   3. Predict the final radius
