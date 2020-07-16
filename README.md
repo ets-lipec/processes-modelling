@@ -15,4 +15,6 @@ $$\Omega_{th}=\sqrt{\frac{\sigma}{a^{2}\; s_{0}\; \rho}}$$
 
 $$\Omega$$
 
+\\[\Omega\\]
+
   3. Predict the final radius
