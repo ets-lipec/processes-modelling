@@ -71,7 +71,7 @@ final_radius(s0).py
 
 <img src="https://latex.codecogs.com/gif.latex?r=r_{0}&space;\sqrt{\frac{\rho&space;U&space;x}{\mu&space;-\Sigma&space;&plus;\sqrt{(\mu&space;-\Sigma&space;)^{2}&plus;(\rho&space;\Omega&space;x^{2})^{2}}}}" title="r=r_{0} \sqrt{\frac{\rho U x}{\mu -\Sigma +\sqrt{(\mu -\Sigma )^{2}+(\rho \Omega x^{2})^{2}}}}" />
 
-<img src="https://latex.codecogs.com/gif.latex?\Sigma&space;=&space;\frac{\sigma&space;x}{r_{0}U}" title="\Sigma = \frac{\sigma x}{r_{0}U}" />
+<img src="https://latex.codecogs.com/gif.latex?\Sigma&space;=\frac{\sigma&space;x}{r_{0}&space;U}" title="\Sigma =\frac{\sigma x}{r_{0} U}" />
 
 <img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (g/s^2)
 
