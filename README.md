@@ -11,14 +11,11 @@ The extruded polymer transforms into a fiber to be collected.
 
   2. Predict the critical rotational velocity for jet ejection
 
-h<sub>&theta;</sub>(x) = &theta;<sub>o</sub> x + &theta;<sub>1</sub>x
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}" title="\Omega _{th}=\sqrt{\frac{\sigma }{a^{2}s_{0}\rho }}" />
 
 
-\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}
-
-\Omega_{th} : Critical rotational velocity for jet ejection (RPS)
+<img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}" title="\Omega _{th}" /> : Critical rotational velocity for jet ejection (RPS)
 \sigma : Surface tension (kg/s^2)
 a : Radius of the orifice (m)
 s_{0} : Radius of the reservoir (m)
