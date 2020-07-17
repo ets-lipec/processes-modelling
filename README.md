@@ -35,12 +35,19 @@ a : Radius of the orifice (m)
 
 <img src="https://latex.codecogs.com/gif.latex?r=\frac{a&space;U^{1/2}&space;\nu^{1/2}&space;}{R_{c}^{3/2}\Omega&space;}" title="r=\frac{a U^{1/2} \nu^{1/2} }{R_{c}^{3/2}\Omega }" />
 
+
 r : Final radius of the fiber (m)
+
 a : Radius of the orifice (m)
+
 U : Initial axial velocity (m/s)
-\nu : kinematic viscosity (m^2/s)
+
+<img src="https://latex.codecogs.com/gif.latex?\nu" title="\nu" /> : kinematic viscosity (m^2/s)
+
 Rc : Radius of the collector (m)
-\Omega : Angular velocity (RPS)
+
+<img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
+
 
    a. Effect of the angular velocity on the final radius
 
@@ -62,7 +69,8 @@ final_radius(s0).py
 
   4. Predict the radius of the jet in steady state as a function of the axial coordinate x
 
-Formule
+<img src="https://latex.codecogs.com/gif.latex?r=r_{0}&space;\sqrt{\frac{\rho&space;U&space;x}{\mu&space;-\Sigma&space;&plus;\sqrt{(\mu&space;-\Sigma&space;)^{2}&plus;(\rho&space;\Omega&space;x^{2})^{2}}}}" title="r=r_{0} \sqrt{\frac{\rho U x}{\mu -\Sigma +\sqrt{(\mu -\Sigma )^{2}+(\rho \Omega x^{2})^{2}}}}" />
+
 
 \sigma : Surface tension (g/s^2)
 x : Axial coordinate (m)
