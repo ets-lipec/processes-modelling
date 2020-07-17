@@ -21,13 +21,13 @@ The extruded polymer transforms into a fiber to be collected.
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}" title="\Omega _{th}" /> : Critical rotational velocity for jet ejection (RPS)
 
-<img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (kg/s^2)
+<img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (<img src="https://latex.codecogs.com/gif.latex?kg/s^{2}" title="kg/s^{2}" />)
 
 a : Radius of the orifice (m)
 
 <img src="https://latex.codecogs.com/gif.latex?s_{0}" title="s_{0}" /> : Radius of the reservoir (m)
 
-<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (kg/m^3)
+<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg/m^{3}" title="kg/m^{3}" />)
 
 
 
@@ -42,7 +42,7 @@ a : Radius of the orifice (m)
 
 U : Initial axial velocity (m/s)
 
-<img src="https://latex.codecogs.com/gif.latex?\nu" title="\nu" /> : kinematic viscosity (m^2/s)
+<img src="https://latex.codecogs.com/gif.latex?\nu" title="\nu" /> : kinematic viscosity (<img src="https://latex.codecogs.com/gif.latex?m^{2}/s" title="m^{2}/s" />)
 
 Rc : Radius of the collector (m)
 
@@ -73,7 +73,7 @@ final_radius(s0).py
 
 <img src="https://latex.codecogs.com/gif.latex?\Sigma&space;=\frac{\sigma&space;x}{r_{0}&space;U}" title="\Sigma =\frac{\sigma x}{r_{0} U}" />
 
-<img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (g/s^2)
+<img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (<img src="https://latex.codecogs.com/gif.latex?kg/s^{2}" title="kg/s^{2}" />)
 
 x : Axial coordinate (m)
 
@@ -81,7 +81,7 @@ x : Axial coordinate (m)
 
 U : Initial axial velocity (m/s)
 
-<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (kg/m^3)
+<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg/m^{3}" title="kg/m^{3}" />)
 
 <img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" /> : Viscosity (Pa.s)
 
