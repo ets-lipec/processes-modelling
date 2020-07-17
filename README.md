@@ -4,10 +4,12 @@ This repository contains all the codes written to model processes developped at 
 
 ## Rotary Jet-Spinning
 
+
   1. Concept of the process
 
 This process consists in extruding a melt polymer through the orifices of a rotating spinneret due to the centrifugal force.
 The extruded polymer transforms into a fiber to be collected.
+
 
   2. Predict the critical rotational velocity for jet ejection
 
@@ -16,10 +18,15 @@ The extruded polymer transforms into a fiber to be collected.
 
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}" title="\Omega _{th}" /> : Critical rotational velocity for jet ejection (RPS)
-\sigma : Surface tension (kg/s^2)
+
+<img src="https://latex.codecogs.com/gif.latex?\sigma" title="\sigma" /> : Surface tension (kg/s^2)
+
 a : Radius of the orifice (m)
-s_{0} : Radius of the reservoir (m)
-\rho : Density (kg/m^3)
+
+<img src="https://latex.codecogs.com/gif.latex?s_{0}" title="s_{0}" /> : Radius of the reservoir (m)
+
+<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (kg/m^3)
+
 
   3. Predict the final radius of the fiber
 
