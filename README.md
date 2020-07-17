@@ -27,7 +27,7 @@ a : Radius of the orifice (m)
 
 <img src="https://latex.codecogs.com/gif.latex?s_{0}" title="s_{0}" /> : Radius of the reservoir (m)
 
-<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg/m^{3}" title="kg/m^{3}" />)
+<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg&space;/&space;m^{3}" title="kg / m^{3}" />)
 
 
 
@@ -81,7 +81,7 @@ x : Axial coordinate (m)
 
 U : Initial axial velocity (m/s)
 
-<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg/m^{3}" title="kg/m^{3}" />)
+<img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg&space;/&space;m^{3}" title="kg / m^{3}" />)
 
 <img src="https://latex.codecogs.com/gif.latex?\mu" title="\mu" /> : Viscosity (Pa.s)
 
