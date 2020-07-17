@@ -5,10 +5,12 @@ This repository contains all the codes written to model processes developped at 
 ## Rotary Jet-Spinning
 
 
+
   1. Concept of the process
 
 This process consists in extruding a melt polymer through the orifices of a rotating spinneret due to the centrifugal force.
 The extruded polymer transforms into a fiber to be collected.
+
 
 
   2. Predict the critical rotational velocity for jet ejection
@@ -28,9 +30,10 @@ a : Radius of the orifice (m)
 <img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (kg/m^3)
 
 
+
   3. Predict the final radius of the fiber
 
-Formule
+<img src="https://latex.codecogs.com/gif.latex?r=\frac{a&space;U^{1/2}&space;\nu^{1/2}&space;}{R_{c}^{3/2}\Omega&space;}" title="r=\frac{a U^{1/2} \nu^{1/2} }{R_{c}^{3/2}\Omega }" />
 
 r : Final radius of the fiber (m)
 a : Radius of the orifice (m)
@@ -54,6 +57,7 @@ final_radius_a.py
    d. Effect of the reservoir radius on the final radius
 
 final_radius(s0).py
+
 
 
   4. Predict the radius of the jet in steady state as a function of the axial coordinate x
