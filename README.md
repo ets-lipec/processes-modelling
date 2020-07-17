@@ -42,7 +42,7 @@ a : Radius of the orifice (m)
 
 U : Initial axial velocity (m/s)
 
-<img src="https://latex.codecogs.com/gif.latex?\nu" title="\nu" /> : kinematic viscosity (<img src="https://latex.codecogs.com/gif.latex?m^{2}/s" title="m^{2}/s" />)
+<img src="https://latex.codecogs.com/gif.latex?\nu" title="\nu" /> : kinematic viscosity (<img src="https://latex.codecogs.com/gif.latex?m^{2}&space;/&space;s" title="m^{2} / s" />)
 
 Rc : Radius of the collector (m)
 
