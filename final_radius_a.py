@@ -94,3 +94,21 @@ axes.set_ylabel("Final radius (m)", fontsize=16)
 # axes.set_title("Super Floss Maxx  / PLA", fontsize=16, y=1.)
 # axes.set_title("CANDY-V001  / PP", fontsize=16, y=1.)
 axes.set_title("CANDY-V001  / PLA", fontsize=16, y=1.)
+
+# Plot a zoomed graphic on the small radius below 0.00002 m
+fig2 = plt.figure()
+axes = fig2.add_subplot(1, 1, 1)
+
+for i in range(discretisation-1):
+    if final_radius[i] <= 0.00002:
+        axes.plot(orifice_radius[i], final_radius[i], 'bo')
+axes.grid()
+axes.set_xlabel("Radius of the orifice (m)", fontsize=16)
+axes.set_ylabel("Final radius  (m)", fontsize=16)
+
+# Choose one title
+# axes.set_title("ZOOM Final radius as a function of the orifice radius ", fontsize=16)
+# axes.set_title("ZOOM Super Floss Maxx  / PP ", fontsize=16)
+# axes.set_title("ZOOM Super Floss Maxx  / PLA", fontsize=16, y=1.)
+# axes.set_title("ZOOM CANDY-V001  / PP", fontsize=16, y=1.)
+axes.set_title("ZOOM CANDY-V001  / PLA", fontsize=16, y=1.)

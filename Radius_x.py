@@ -103,12 +103,12 @@ axes.set_ylabel("Radius (m)", fontsize=16)
 # axes.set_title("CANDY-V001  / PP", fontsize=16, y=1.)
 axes.set_title("CANDY-V001  / PLA", fontsize=16, y=1.)
 
-# tracer un graphe zoomé sur les petits rayons inférieurs à 0.00010 m
+# Plot a zoomed graphic on the small radius below 0.00002 m
 fig2 = plt.figure()
 axes = fig2.add_subplot(1, 1, 1)
 
 for i in range(discretisation-1):
-    if radius[i] <= 0.00010:
+    if radius[i] <= 0.00002:
         axes.plot(x_position[i], radius[i], 'bo')
 axes.grid()
 axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
