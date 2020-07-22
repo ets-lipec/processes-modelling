@@ -10,43 +10,32 @@ by mellado et al.
 
 Goal : Prediction of the critical rotational velocity for jet ejection
 
-Select the machine and the polymer for which we want to run the code.
+Select the machine and the polymer for which we want to run the code and ajust values
+in polymer.yaml and machine.yaml files.
 
-Inputs : Concerning the polymer : the surface tension, the density
-         Concerning the machine : the reservoir radius, the orifice radius.
+In polymer.yaml : the surface tension, the density
+In machine.yaml : the reservoir radius, the orifice radius.
 
 All data are in SI units.
 
 """
+c
+from machine import RJSMachine
+from polymer import Polymer
+from models_rjs import *
 
-from models_RJS import *
+machine = RJSMachine("machine.yaml")
+polymer = Polymer("polymer.yaml")
 
-# Choose one machine and one polymer
+# Reach machine parameters
+name_machine = machine.doc['Machines']['Name']
+s0 = float(machine.doc['Machines']['Reservoir Radius'])
+orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
 
-# Machines
-# Super Floss Maxx
-# s0 = 0.06985
-# orifice_radius = 0.001512
-
-# CANDY-V001
-s0 = 0.0635
-orifice_radius = 0.000267
-
-# Polymers
-# PP
-# surface_tension = 0.0436
-# rho = 900.
-
-# PLA
-surface_tension = 0.0248
-rho = 1250.
-
-# If we want the user to enter its own values
-# surface_tension = float(input("Enter the surface tension in kg/s^2 : "))
-# orifice_radius = float(input("Enter the radius of the orifice in m : "))
-# s0 = float(input("Enter the radius of the reservoir in m : "))
-# rho = float(input("Enter the density of the polymer in kg/m^3 : "))
-
+# Reach polymer parameters
+name_polymer = polymer.doc['Polymers']['Name']
+surface_tension = float(polymer.doc['Polymers']['Surface Tension'])
+rho = float(polymer.doc['Polymers']['Density'])# Choose one machine and one polymer
 
 critical_rotational_velocity = critical_rotational_velocity_threshold(surface_tension,
                                                                       orifice_radius, s0, rho)

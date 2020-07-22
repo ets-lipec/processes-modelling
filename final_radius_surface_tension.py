@@ -1,26 +1,24 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri Jul  3 19:06:17 2020
+Created on Mon Jul 20 15:40:29 2020
 
 @author: amelielaurens
 
 Source : A simple model for nanofiber formation by rotary jet-spinning
 by mellado et al.
 
-Goal : Prediction of the final radius for various collector distances.
+Goal : Prediction of the final radius for various polymer surface tension.
 
 Select the machine and the polymer for which we want to run the code and ajust values
 in polymer.yaml and machine.yaml files.
 
-In polymer.yaml : the surface tension, the viscosity, the density
-In machine.yaml : the reservoir radius, the orifice radius,
-                  the angular viscosity of the spinneret.
+In polymer.yaml : the density, the viscosity
+In machine.yaml : the reservoir radius, the collector radius,
+                  the orifice radius, the angular viscosity of the spinneret.
 
 All data are in SI units.
-
 """
-
 from machine import RJSMachine
 from polymer import Polymer
 from models_rjs import *
@@ -37,6 +35,7 @@ polymer = Polymer("polymer.yaml")
 # Reach machine parameters
 name_machine = machine.doc['Machines']['Name']
 s0 = float(machine.doc['Machines']['Reservoir Radius'])
+Rc = float(machine.doc['Machines']['Collector Radius'])
 omega = float(machine.doc['Machines']['Angular Velocity'])
 orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
 
@@ -44,42 +43,46 @@ orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
 name_polymer = polymer.doc['Polymers']['Name']
 rho = float(polymer.doc['Polymers']['Density'])
 mu = float(polymer.doc['Polymers']['Viscosity'])
-surface_tension = float(polymer.doc['Polymers']['Surface Tension'])
 
-omega_th = critical_rotational_velocity_threshold(surface_tension,
-                                                  orifice_radius, s0, rho)
-initial_velocity = Initial_velocity(omega_th, s0)
+surface_tension = numpy.linspace(0.02, 0.06, discretisation)
+
+omega_th = []
+initial_velocity = []
+for l in range(discretisation):
+    omega_th.append(critical_rotational_velocity_threshold(surface_tension[l], orifice_radius,
+                                                           s0, rho))
+    initial_velocity.append(Initial_velocity(omega_th[l], s0))
+omega_th = numpy.array(omega_th)
+initial_velocity = numpy.array(initial_velocity)
 
 nu = kinematic_viscosity(mu, rho)
 
-Rc = numpy.linspace(0.1, 0.5, discretisation)
-
-
 final_radius = []
 for k in range(discretisation):
-    final_radius.append(final_radius_approx(orifice_radius, initial_velocity,
-                                            nu, Rc[k], omega))
+    final_radius.append(final_radius_approx(orifice_radius, initial_velocity[k],
+                                            nu, Rc, omega))
 final_radius = numpy.array(final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
 
 for i in range(discretisation):
-    axes.plot(Rc[i], final_radius[i], 'ro')
+    axes.plot(surface_tension[i], final_radius[i], 'ro')
 axes.grid()
-axes.set_xlabel("Collector distance (m)", fontsize=16)
+axes.set_xlabel("Surface tension (kg/s^2)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)
+axes.set_title("Super Floss Maxx  / PP", fontsize=16, y=1.)
 axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
 
 # Plot a zoomed graphic on the small radius below 0.00002 m
 fig2 = plt.figure()
 axes = fig2.add_subplot(1, 1, 1)
 
-for i in range(discretisation-1):
+for i in range(discretisation):
     if final_radius[i] <= 0.00002:
-        axes.plot(Rc[i], final_radius[i], 'bo')
+        axes.plot(surface_tension[i], final_radius[i], 'bo')
 axes.grid()
-axes.set_xlabel("Collector distance (m)", fontsize=16)
+axes.set_xlabel("Surface tension (kg/s^2)", fontsize=16)
 axes.set_ylabel("Final radius  (m)", fontsize=16)
 axes.set_title("ZOOM %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.05)
 

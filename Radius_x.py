@@ -11,63 +11,42 @@ by mellado et al.
 Goal : Prediction of the radius of the jet in steady state as a function of
 the axial coordinate x.
 
-Select the machine and the polymer for which we want to run the code.
+Select the machine and the polymer for which we want to run the code and ajust values
+in polymer.yaml and machine.yaml files.
 
-Inputs : Concerning the polymer : the surface tension, the density, the viscosity
-         Concerning the machine : the reservoir radius, the collector radius,
-         the orifice radius, the angular viscosity of the spinneret.
+In polymer.yaml : the surface tension, the viscosity, the density
+In machine.yaml : the reservoir radius, the collector radius,
+                  the orifice radius, the angular viscosity of the spinneret.
 
 All data are in SI units.
 
 """
 
-from models_RJS import *
+from machine import RJSMachine
+from polymer import Polymer
+from models_rjs import *
 import numpy
 import matplotlib.pyplot as plt
-
 
 discretisation = 20
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.
 
+machine = RJSMachine("machine.yaml")
+polymer = Polymer("polymer.yaml")
 
-# Choose one machine and one polymer
-# Machines
-# Super Floss Maxx
-# s0 = 0.06985
-# Rc = 0.3302
-# orifice_radius = 0.001512
-# omega = 57.5
+# Reach machine parameters
+name_machine = machine.doc['Machines']['Name']
+s0 = float(machine.doc['Machines']['Reservoir Radius'])
+Rc = float(machine.doc['Machines']['Collector Radius'])
+omega = float(machine.doc['Machines']['Angular Velocity'])
+orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
 
-# CANDY-V001
-s0 = 0.0635
-Rc = 0.254
-orifice_radius = 0.000267
-omega = 40.
-
-
-# Polymers
-# PP
-# surface_tension = 0.0436
-# rho = 900.
-# mu = 0.63
-
-# PLA
-surface_tension = 0.0248
-rho = 1250.
-mu = 0.113
-
-
-# If we want the user to enter its own values
-# surface_tension =float(input("Enter the surface tension in kg/s^2 : "))
-# Rc = float(input("Enter the radius of the collector in m : "))
-# s0 = float(input("Enter the radius of the reservoir in m : "))
-# discretisation = int(input("Enter an int for the mesh's thinness : "))
-# orifice_radius = float(input("Enter the radius of the orifice in m : "))
-# rho = float(input("Enter the density of the polymer in kg/m^3 : "))
-# mu = float(input("Enter the viscosity of the polymer in Pa.s : "))
-# omega = float(input("Enter the angular velocity in rounds per second : "))
-
+# Reach polymer parameters
+name_polymer = polymer.doc['Polymers']['Name']
+rho = float(polymer.doc['Polymers']['Density'])
+mu = float(polymer.doc['Polymers']['Viscosity'])
+surface_tension = float(polymer.doc['Polymers']['Surface Tension'])
 
 x_position = numpy.linspace(0, Rc-s0, discretisation)
 
@@ -79,7 +58,6 @@ for l in range(discretisation):
     Sigma.append(sigma(surface_tension, x_position[l], orifice_radius,
                        initial_velocity))
 Sigma = numpy.array(Sigma)
-
 
 radius = []
 for k in range(1, discretisation):
@@ -95,13 +73,7 @@ for i in range(discretisation-1):
 axes.grid()
 axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
 axes.set_ylabel("Radius (m)", fontsize=16)
-
-# Choose one title
-# axes.set_title("Radius of the jet as a function of the axial coordinate ", fontsize=16)
-# axes.set_title("Super Floss Maxx  / PP ", fontsize=16)
-# axes.set_title("Super Floss Maxx  / PLA", fontsize=16, y=1.)
-# axes.set_title("CANDY-V001  / PP", fontsize=16, y=1.)
-axes.set_title("CANDY-V001  / PLA", fontsize=16, y=1.)
+axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
 
 # tracer un graphe zoomé sur les petits rayons inférieurs à 0.00010 m
 fig2 = plt.figure()
@@ -113,10 +85,6 @@ for i in range(discretisation-1):
 axes.grid()
 axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
 axes.set_ylabel("Radius (m)", fontsize=16)
+axes.set_title("ZOOM %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.05)
 
-# Choose one title
-# axes.set_title("ZOOM Radius of the jet as a function of the axial coordinate ", fontsize=16)
-# axes.set_title("ZOOM Super Floss Maxx  / PP ", fontsize=16)
-# axes.set_title("ZOOM Super Floss Maxx  / PLA", fontsize=16, y=1.)
-# axes.set_title("ZOOM CANDY-V001  / PP", fontsize=16, y=1.)
-axes.set_title("ZOOM CANDY-V001  / PLA", fontsize=16, y=1.)
+plt.show()
