@@ -58,13 +58,13 @@ fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
 
 # Plot the points of the model
-axes.plot(scaling_factor, radius_ratio, 'bo', label='model')
+axes.plot(scaling_factor, radius_ratio, 'ro', label='model')
 
 # Plot the points of the experiment
 x = [1.0, 1.1, 1.3, 1.5, 1.8, 2.1, 2.4]
 y = [1.0, 0.88, 0.79, 0.76, 0.69, 0.68, 0.64]
 
-axes.plot(x, y, 'rx', label='experiment')
+axes.plot(x, y, 'bx', label='experiment')
 
 axes.grid()
 axes.set_xlabel("Scaling factor", fontsize=16)
