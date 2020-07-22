@@ -5,24 +5,17 @@ Created on Tue Jul 21 14:38:23 2020
 
 @author: amelielaurens
 """
-import yaml, sys
-import os.path
+from deck import Deck
 
 
 class RJSMachine:
 
     # Initializer Attributes
-    def __init__(self, inputhpath):
-        #self.name = name
-        #self.orifice_radius = orifice_radius
-        #self.collector_radius = collector_radius
-        #self.reservoir_radius = reservoir_radius
-        #self.omega = omega
-        if not os.path.exists(inputhpath):
-            print("File " + inputhpath)
-            sys.exit(1)
-        else:
-            with open(inputhpath,'r') as f:
-                ## Container of the tags parsed from the yaml file
-                self.doc = yaml.load(f, Loader=yaml.BaseLoader)
+    def __init__(self, deck = Deck("deck.yaml")):
+        self.name = deck.doc['Machines']['Name']
+        self.orifice_radius = float(deck.doc['Machines']['Orifice Radius'])
+        self.collector_radius = float(deck.doc['Machines']['Collector Radius'])
+        self.reservoir_radius = float(deck.doc['Machines']['Reservoir Radius'])
+        self.omega = float(deck.doc['Machines']['Angular Velocity'])
+
         
