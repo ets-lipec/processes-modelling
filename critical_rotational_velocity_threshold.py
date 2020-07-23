@@ -11,31 +11,33 @@ by mellado et al.
 Goal : Prediction of the critical rotational velocity for jet ejection
 
 Select the machine and the polymer for which we want to run the code and ajust values
-in polymer.yaml and machine.yaml files.
+in deck.yaml file.
 
-In polymer.yaml : the surface tension, the density
-In machine.yaml : the reservoir radius, the orifice radius.
+Polymer parameters : the density, the surface tension
+Machine parameters  : the reservoir radius, the orifice radius
 
 All data are in SI units.
 
 """
-c
+
+from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
 from models_rjs import *
 
-machine = RJSMachine("machine.yaml")
-polymer = Polymer("polymer.yaml")
+deck = Deck("deck.yaml")
+machine = RJSMachine(deck)
+polymer = Polymer(deck)
 
 # Reach machine parameters
-name_machine = machine.doc['Machines']['Name']
-s0 = float(machine.doc['Machines']['Reservoir Radius'])
-orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
+name_machine = machine.name
+s0 = machine.reservoir_radius
+orifice_radius = machine.orifice_radius
 
 # Reach polymer parameters
-name_polymer = polymer.doc['Polymers']['Name']
-surface_tension = float(polymer.doc['Polymers']['Surface Tension'])
-rho = float(polymer.doc['Polymers']['Density'])# Choose one machine and one polymer
+name_polymer = polymer.name
+rho = polymer.density
+surface_tension = polymer.surface_tension
 
 critical_rotational_velocity = critical_rotational_velocity_threshold(surface_tension,
                                                                       orifice_radius, s0, rho)

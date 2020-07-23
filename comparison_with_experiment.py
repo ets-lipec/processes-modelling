@@ -23,7 +23,6 @@ from models_RJS import *
 import numpy
 import matplotlib.pyplot as plt
 
-
 discretisation = 20
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.

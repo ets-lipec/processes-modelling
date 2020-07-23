@@ -11,37 +11,40 @@ by mellado et al.
 Goal : Prediction of the final radius for various polymer density.
 
 Select the machine and the polymer for which we want to run the code and ajust values
-in polymer.yaml and machine.yaml files.
+in deck.yaml file.
 
-In polymer.yaml : the surface tension, the viscosity
-In machine.yaml : the reservoir radius, the collector radius,
-                  the orifice radius, the angular viscosity of the spinneret.
+Polymer parameters : the surface tension, the viscosity
+Machine parameters  : the reservoir radius, the collector radius,
+                      the orifice radius, the angular viscosity of the spinneret.
+Discretisation number
 
 All data are in SI units.
 """
 
+from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
 from models_rjs import *
 import numpy
 import matplotlib.pyplot as plt
 
-machine = RJSMachine("machine.yaml")
-polymer = Polymer("polymer.yaml")
+deck = Deck("deck.yaml")
+machine = RJSMachine(deck)
+polymer = Polymer(deck)
 
 # Reach machine parameters
-name_machine = machine.doc['Machines']['Name']
-s0 = float(machine.doc['Machines']['Reservoir Radius'])
-Rc = float(machine.doc['Machines']['Collector Radius'])
-omega = float(machine.doc['Machines']['Angular Velocity'])
-orifice_radius = float(machine.doc['Machines']['Orifice Radius'])
+name_machine = machine.name
+s0 = machine.reservoir_radius
+Rc = machine.collector_radius
+omega = machine.omega
+orifice_radius = machine.orifice_radius
 
 # Reach polymer parameters
-name_polymer = polymer.doc['Polymers']['Name']
-surface_tension = float(polymer.doc['Polymers']['Surface Tension'])
-mu = float(polymer.doc['Polymers']['Viscosity'])
+name_polymer = polymer.name
+mu = polymer.viscosity
+surface_tension = polymer.surface_tension
 
-discretisation = 20
+discretisation = int(deck.doc['Discretisation'])
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.
 

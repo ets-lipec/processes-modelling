@@ -16,9 +16,11 @@ in deck.yaml file.
 Polymer parameters : the density, the viscosity
 Machine parameters  : the reservoir radius, the collector radius,
                       the orifice radius, the angular viscosity of the spinneret.
+Discretisation number
 
 All data are in SI units.
 """
+
 from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
@@ -27,19 +29,19 @@ import numpy
 import matplotlib.pyplot as plt
 
 deck = Deck("deck.yaml")
-machine = RJSMachine("deck.yaml")
-polymer = Polymer("deck.yaml")
+machine = RJSMachine(deck)
+polymer = Polymer(deck)
 
-discretisation = 20
+discretisation = int(deck.doc['Discretisation'])
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.
 
 # Reach machine parameters
-name_machine = RJSmachine.name
-s0 = RJSmachine.reservoir_radius
-Rc = RJSmachine.collector_radius
-omega = RJSmachine.omega
-orifice_radius = RJSmachine.orifice_radius
+name_machine = machine.name
+s0 = machine.reservoir_radius
+Rc = machine.collector_radius
+omega = machine.omega
+orifice_radius = machine.orifice_radius
 
 # Reach polymer parameters
 name_polymer = polymer.name
