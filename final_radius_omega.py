@@ -55,7 +55,7 @@ initial_velocity = Initial_velocity(omega_th, s0)
 
 nu = kinematic_viscosity(mu, rho)
 
-omega = numpy.linspace(4000//60, 37000//60, discretisation)
+omega = numpy.linspace(2000//60, 37000//60, discretisation)
 
 final_radius = []
 for k in range(discretisation):

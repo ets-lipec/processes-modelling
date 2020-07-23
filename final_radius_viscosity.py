@@ -71,7 +71,16 @@ for i in range(discretisation):
 axes.grid()
 axes.set_xlabel("Polymer viscosity (Pa.s)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)
+<<<<<<< HEAD
 axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
+=======
+# Choose which title
+# axes.set_title("Final radius as a function of the polymer viscosity ", fontsize=16)
+axes.set_title("Super Floss Maxx  / PP", fontsize=16, y=1.)
+# axes.set_title("Super Floss Maxx  / PLA", fontsize=16, y=1.)
+# axes.set_title("CANDY-V001  / PP", fontsize=16, y=1.)
+# axes.set_title("CANDY-V001  / PLA", fontsize=16, y=1.)
+>>>>>>> 1181969f571ee17d0bb18582c17458ff0513c489
 
 # Plot a zoomed graphic on the small radius below 0.00002 m
 fig2 = plt.figure()
@@ -83,6 +92,16 @@ for i in range(discretisation):
 axes.grid()
 axes.set_xlabel("Polymer viscosity (Pa.s)", fontsize=16)
 axes.set_ylabel("Final radius  (m)", fontsize=16)
+<<<<<<< HEAD
 axes.set_title("ZOOM %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.05)
 
 plt.show()
+=======
+
+# Choose one title
+# axes.set_title("ZOOM Final radius as a function of the polymer viscosity ", fontsize=16)
+axes.set_title("ZOOM Super Floss Maxx  / PP ", fontsize=16)
+# axes.set_title("ZOOM Super Floss Maxx  / PLA", fontsize=16, y=1.)
+# axes.set_title("ZOOM CANDY-V001  / PP", fontsize=16, y=1.)
+# axes.set_title("ZOOM CANDY-V001  / PLA", fontsize=16, y=1.)
+>>>>>>> 1181969f571ee17d0bb18582c17458ff0513c489
