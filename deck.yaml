@@ -1,0 +1,15 @@
+Polymers:
+  Name: 'Polypropylene'
+  Viscosity: 0.63
+  Density: 900
+  Surface Tension: 0.0436
+
+Machines:
+  Name: 'Super Floss Maxx'
+  Orifice Radius: 0.001512
+  Collector Radius: 0.3302
+  Reservoir Radius: 0.06985
+  Angular Velocity : 57.5
+
+Discretisation: 20
+  
