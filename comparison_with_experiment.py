@@ -19,12 +19,19 @@ Inputs : Concerning the polymer : the surface tension, the density, the viscosit
 All data are in SI units.
 """
 
-from models_RJS import *
+from deck import Deck
+from machine import RJSMachine
+from polymer import Polymer
+from modelling import RJSModel
 import numpy
 import matplotlib.pyplot as plt
 
+deck = Deck("deck.yaml")
+machine = RJSMachine(deck)
+polymer = Polymer(deck)
+model = RJSModel(deck, polymer, machine)
 
-discretisation = 20
+discretisation = int(deck.doc['Discretisation'])
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.
 
@@ -43,12 +50,12 @@ scaling_factor = numpy.linspace(1.0, 2.6, discretisation)
 # Y Axis : radius ratio
 radius_ratio = []
 for k in range(discretisation):
-    Sigma = sigma(surface_tension, Rc, orifice_radius, initial_velocity)
+    Sigma = model.sigma(surface_tension, Rc, orifice_radius, initial_velocity)
     # Numerator
-    r_num = Radius(orifice_radius, rho, initial_velocity, Rc, mu, Sigma,
+    r_num = model.radius(orifice_radius, rho, initial_velocity, Rc, mu, Sigma,
                    scaling_factor[k]*omega)
     # Denominator
-    r_deno = Radius(orifice_radius, rho, initial_velocity, Rc, mu, Sigma,
+    r_deno = model.radius(orifice_radius, rho, initial_velocity, Rc, mu, Sigma,
                     omega)
     radius_ratio.append(r_num/r_deno)
 radius_ratio = numpy.array(radius_ratio)
