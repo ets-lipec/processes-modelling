@@ -61,7 +61,6 @@ initial_velocity = numpy.array(initial_velocity)
 
 nu = model.kinematic_viscosity(mu, rho)
 
-
 Final_radius = []
 for k in range(discretisation):
     Final_radius.append(model.final_radius(orifice_radius, initial_velocity[k],
