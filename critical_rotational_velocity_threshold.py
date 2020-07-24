@@ -19,36 +19,17 @@ All data are in SI units.
 
 """
 
-from models_RJS import *
+from deck import Deck
+from machine import RJSMachine
+from polymer import Polymer
+from modelling import RJSModel
 
-# Choose one machine and one polymer
+deck = Deck("deck.yaml")
+machine = RJSMachine(deck)
+polymer = Polymer(deck)
+model = RJSModel(deck, polymer, machine)
 
-# Machines
-# Super Floss Maxx
-# s0 = 0.06985
-# orifice_radius = 0.001512
+critical_rotational_velocity = model.omega_th
 
-# CANDY-V001
-s0 = 0.0635
-orifice_radius = 0.000267
-
-# Polymers
-# PP
-# surface_tension = 0.0436
-# rho = 900.
-
-# PLA
-surface_tension = 0.0248
-rho = 1250.
-
-# If we want the user to enter its own values
-# surface_tension = float(input("Enter the surface tension in kg/s^2 : "))
-# orifice_radius = float(input("Enter the radius of the orifice in m : "))
-# s0 = float(input("Enter the radius of the reservoir in m : "))
-# rho = float(input("Enter the density of the polymer in kg/m^3 : "))
-
-
-critical_rotational_velocity = critical_rotational_velocity_threshold(surface_tension,
-                                                                      orifice_radius, s0, rho)
 print('The critical rotational velocity threshold for jet ejection is :'
       '%s (in round per second).' % (critical_rotational_velocity))
