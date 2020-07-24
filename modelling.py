@@ -1,10 +1,12 @@
 from math import *
+from deck import Deck
+from machine import RJSMachine
+from polymer import Polymer
 
-
-class RJSModel:
+class RJSModel(RJSMachine, Polymer):
 
     # Initializer Attributes
-    def __init__(self, deck, polymer, machine):
+    def __init__(self, polymer, machine):
         self.omega_th = self.critical_rotational_velocity_threshold(polymer.surface_tension, machine.orifice_radius, machine.reservoir_radius, polymer.density)
         self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
         self.nu = self.kinematic_viscosity(polymer.viscosity, polymer.density)

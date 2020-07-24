@@ -27,7 +27,7 @@ from modelling import RJSModel
 deck = Deck("deck.yaml")
 machine = RJSMachine(deck)
 polymer = Polymer(deck)
-model = RJSModel(deck, polymer, machine)
+model = RJSModel(polymer, machine)
 
 critical_rotational_velocity = model.omega_th
 

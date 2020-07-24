@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 deck = Deck("deck.yaml")
 machine = RJSMachine(deck)
 polymer = Polymer(deck)
-model = RJSModel(deck, polymer, machine)
+model = RJSModel(polymer, machine)
 
 # Reach machine parameters
 name_machine = machine.name

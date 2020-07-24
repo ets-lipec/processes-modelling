@@ -30,7 +30,7 @@ import matplotlib.pyplot as plt
 deck = Deck("deck.yaml")
 machine = RJSMachine(deck)
 polymer = Polymer(deck)
-model = RJSModel(deck, polymer, machine)
+model = RJSModel(polymer, machine)
 
 discretisation = 20
 # The higher the discretisation number is, the finer the discretisation will be,
