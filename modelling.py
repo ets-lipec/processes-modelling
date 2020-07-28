@@ -3,7 +3,7 @@ from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
 
-class RJSModel(RJSMachine, Polymer):
+class RJSModel:
 
     # Initializer Attributes
     def __init__(self, polymer, machine):
