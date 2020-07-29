@@ -69,7 +69,6 @@ Final_radius = numpy.array(Final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
 axes.plot(orifice_radius, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Radius of the orifice (m)", fontsize=16)

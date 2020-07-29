@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 """
 Created on Thu Jul  2 14:27:46 2020
@@ -63,9 +65,7 @@ Final_radius = numpy.array(Final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
-for i in range(discretisation):
-    axes.plot(omega[i], Final_radius[i], 'ro')
+axes.plot(omega, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Angular velocity (rounds per second)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)

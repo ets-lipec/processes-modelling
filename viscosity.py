@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 """
 Reference : 
 Mark G. Dodin Ph.D. (1986) 

@@ -66,9 +66,7 @@ Final_radius = numpy.array(Final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
-for i in range(discretisation):
-    axes.plot(nu[i], Final_radius[i], 'ro')
+axes.plot(nu, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Polymer viscosity (Pa.s)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)

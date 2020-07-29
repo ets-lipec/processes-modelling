@@ -69,9 +69,7 @@ Final_radius = numpy.array(Final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
-for i in range(discretisation):
-    axes.plot(rho[i], Final_radius[i], 'ro')
+axes.plot(rho, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Density (kg/m^3)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)

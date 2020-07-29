@@ -69,9 +69,7 @@ Final_radius = numpy.array(Final_radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
-for i in range(discretisation):
-    axes.plot(surface_tension[i], Final_radius[i], 'ro')
+axes.plot(surface_tension, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Surface tension (kg/s^2)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)
