@@ -70,8 +70,7 @@ Final_radius = numpy.array(Final_radius)
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
 
-for i in range(discretisation):
-    axes.plot(orifice_radius[i], Final_radius[i], 'ro')
+axes.plot(orifice_radius, Final_radius, 'ro')
 axes.grid()
 axes.set_xlabel("Radius of the orifice (m)", fontsize=16)
 axes.set_ylabel("Final radius (m)", fontsize=16)
@@ -81,7 +80,7 @@ axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
 fig2 = plt.figure()
 axes = fig2.add_subplot(1, 1, 1)
 
-for i in range(discretisation-1):
+for i in range(discretisation):
     if Final_radius[i] <= 0.00002:
         axes.plot(orifice_radius[i], Final_radius[i], 'bo')
 axes.grid()

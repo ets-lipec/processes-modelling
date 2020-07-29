@@ -10,10 +10,11 @@ by mellado et al.
 
 Goal : Prediction of the critical rotational velocity for jet ejection
 
-Select the machine and the polymer for which we want to run the code.
+Select the machine and the polymer for which we want to run the code and ajust values
+in deck.yaml file.
 
-Inputs : Concerning the polymer : the surface tension, the density
-         Concerning the machine : the reservoir radius, the orifice radius.
+Polymer parameters : the density, the surface tension
+Machine parameters  : the reservoir radius, the orifice radius
 
 All data are in SI units.
 

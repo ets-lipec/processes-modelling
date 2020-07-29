@@ -12,3 +12,4 @@ class Deck():
             with open(inputhpath,'r') as f:
                 ## Container of the tags parsed from the yaml file
                 self.doc = yaml.load(f, Loader=yaml.BaseLoader)
+                

@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+
 """
 Created on Thu Jul  2 14:27:46 2020
 
@@ -76,7 +75,7 @@ axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
 fig2 = plt.figure()
 axes = fig2.add_subplot(1, 1, 1)
 
-for i in range(discretisation-1):
+for i in range(discretisation):
     if Final_radius[i] <= 0.00002:
         axes.plot(omega[i], Final_radius[i], 'bo')
 axes.grid()
