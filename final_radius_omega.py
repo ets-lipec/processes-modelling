@@ -33,7 +33,7 @@ machine = RJSMachine(deck)
 polymer = Polymer(deck)
 model = RJSModel(polymer, machine)
 
-discretisation = 20
+discretisation = int(deck.doc['Discretisation'])
 # The higher the discretisation number is, the finer the discretisation will be,
 # there will be more points on the graphic.
 
