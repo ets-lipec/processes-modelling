@@ -23,23 +23,14 @@ All data are in SI units.
 from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
-from models_rjs import *
+from modelling import RJSModel
 
 deck = Deck("deck.yaml")
 machine = RJSMachine(deck)
 polymer = Polymer(deck)
+model = RJSModel(polymer, machine)
 
-# Reach machine parameters
-name_machine = machine.name
-s0 = machine.reservoir_radius
-orifice_radius = machine.orifice_radius
+critical_rotational_velocity = model.omega_th
 
-# Reach polymer parameters
-name_polymer = polymer.name
-rho = polymer.density
-surface_tension = polymer.surface_tension
-
-critical_rotational_velocity = critical_rotational_velocity_threshold(surface_tension,
-                                                                      orifice_radius, s0, rho)
 print('The critical rotational velocity threshold for jet ejection is :'
       '%s (in round per second).' % (critical_rotational_velocity))
