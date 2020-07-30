@@ -4,7 +4,7 @@
 Source : A simple model for nanofiber formation by rotary jet-spinning
 by mellado et al.
 
-Goal : Prediction of the final radius
+Goal : Prediction of the radius of the fiber
 
 Change values of the machine and the polymer for which we want to run the code in deck.yaml.
 
@@ -37,6 +37,7 @@ class Graph:
         self.final_radius_density(deck, polymer, machine, model)
         self.final_radius_surface_tension(deck, polymer, machine, model)
         self.final_radius_viscosity(deck, polymer, machine, model)
+        self.radius_x(deck, polymer, machine, model)
         
 
 
@@ -275,4 +276,39 @@ class Graph:
         axes.set_ylabel("Final radius (m)", fontsize=16)
         axes.set_title(" %s / %s " % (machine.name, polymer.name), fontsize=16, y=1.)
         plt.savefig("./graphics/final_radius_viscosity.pdf", format="pdf")
-    
+
+
+
+    def radius_x(self, deck, polymer, machine, model):
+
+        discretisation = int(deck.doc['Discretisation'])
+        # The higher the discretisation number is, the finer the discretisation will be,
+        # there will be more points on the graphic
+
+        x_position = numpy.linspace(machine.reservoir_radius, machine.collector_radius-machine.reservoir_radius, discretisation)
+        
+        omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
+                                                  machine.orifice_radius, machine.reservoir_radius, polymer.density)
+                                                  
+        initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
+        
+        Sigma = []
+        for l in range(discretisation):
+            Sigma.append(model.sigma(polymer.surface_tension, x_position[l], machine.orifice_radius,
+                       initial_velocity))
+        Sigma = numpy.array(Sigma)
+        
+        Radius = []
+        for k in range(discretisation):
+            Radius.append(model.radius(machine.orifice_radius, polymer.density, initial_velocity, x_position[k],
+                         polymer.viscosity, Sigma[k], machine.omega))
+        Radius = numpy.array(Radius)
+        
+        fig = plt.figure()
+        axes = fig.add_subplot(1, 1, 1)
+        axes.plot(x_position, Radius, 'ro')
+        axes.grid()
+        axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
+        axes.set_ylabel("Radius (m)", fontsize=16)
+        axes.set_title(" %s / %s " % (machine.name, polymer.name), fontsize=16, y=1.)
+        plt.savefig("./graphics/radius_x.pdf", format="pdf")
