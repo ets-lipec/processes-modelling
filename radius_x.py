@@ -26,13 +26,14 @@ All data are in SI units.
 from deck import Deck
 from machine import RJSMachine
 from polymer import Polymer
-from models_rjs import *
+from modelling import RJSModel
 import numpy
 import matplotlib.pyplot as plt
 
 deck = Deck("deck.yaml")
 machine = RJSMachine(deck)
 polymer = Polymer(deck)
+model = RJSModel(polymer, machine)
 
 discretisation = int(deck.doc['Discretisation'])
 # The higher the discretisation number is, the finer the discretisation will be,
@@ -51,40 +52,38 @@ rho = polymer.density
 mu = polymer.viscosity
 surface_tension = polymer.surface_tension
 
-x_position = numpy.linspace(0, Rc-s0, discretisation)
+x_position = numpy.linspace(s0, Rc-s0, discretisation)
 
-omega_th = critical_rotational_velocity_threshold(surface_tension,
+omega_th = model.critical_rotational_velocity_threshold(surface_tension,
                                                   orifice_radius, s0, rho)
-initial_velocity = Initial_velocity(omega_th, s0)
+initial_velocity = model.Initial_velocity(omega_th, s0)
 Sigma = []
 for l in range(discretisation):
-    Sigma.append(sigma(surface_tension, x_position[l], orifice_radius,
+    Sigma.append(model.sigma(surface_tension, x_position[l], orifice_radius,
                        initial_velocity))
 Sigma = numpy.array(Sigma)
 
-radius = []
-for k in range(1, discretisation):
-    radius.append(Radius(orifice_radius, rho, initial_velocity, x_position[k],
+Radius = []
+for k in range(discretisation):
+    Radius.append(model.radius(orifice_radius, rho, initial_velocity, x_position[k],
                          mu, Sigma[k], omega))
-radius = numpy.array(radius)
+Radius = numpy.array(Radius)
 
 fig = plt.figure()
 axes = fig.add_subplot(1, 1, 1)
-
-for i in range(discretisation-1):
-    axes.plot(x_position[i], radius[i], 'ro')
+axes.plot(x_position, Radius, 'ro')
 axes.grid()
 axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
 axes.set_ylabel("Radius (m)", fontsize=16)
 axes.set_title(" %s / %s " % (name_machine, name_polymer), fontsize=16, y=1.)
 
-# tracer un graphe zoomé sur les petits rayons inférieurs à 0.00010 m
+# tracer un graphe zoomé sur les petits rayons inférieurs à 0.00002 m
 fig2 = plt.figure()
 axes = fig2.add_subplot(1, 1, 1)
 
-for i in range(discretisation-1):
-    if radius[i] <= 0.00010:
-        axes.plot(x_position[i], radius[i], 'bo')
+for i in range(discretisation):
+    if Radius[i] <= 0.00002:
+        axes.plot(x_position[i], Radius[i], 'bo')
 axes.grid()
 axes.set_xlabel("Axial coordinate x (m)", fontsize=16)
 axes.set_ylabel("Radius (m)", fontsize=16)
