@@ -11,8 +11,6 @@ polymer = Polymer(deck)
 
 model = RJSModel(polymer, machine)
 
-#graph = Graph(deck, polymer, machine, model)
-
 data = Data(deck, polymer, machine, model)
 
 organization = Organization(data, deck, machine, polymer, model)
