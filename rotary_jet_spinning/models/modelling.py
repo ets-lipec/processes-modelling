@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from math import *
-from deck import Deck
-from machine import RJSMachine
-from polymer import Polymer
+
 
 class RJSModel:
 
