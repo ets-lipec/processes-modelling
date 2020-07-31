@@ -2,9 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from math import *
-from deck import Deck
-from machine import RJSMachine
-from polymer import Polymer
+
 
 class RJSModel:
 
@@ -14,8 +12,6 @@ class RJSModel:
         self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
         self.nu = self.kinematic_viscosity(polymer.viscosity, polymer.density)
         self.final_radius(machine.orifice_radius, self.initial_velocity, self.nu, machine.collector_radius, machine.omega)
-        #self.Sigma[k] = self.sigma(polymer.surface_tension, x_position[k], machine.orifice_radius, self.initial_velocity)
-        #self.Radius[k] = self.radius(machine.orifice_radius, polymer.density, self.initial_velocity, x_position[k], polymer.viscosity, self.sigma, machine.omega)
 
     def critical_rotational_velocity_threshold(self, surface_tension, orifice_radius, s0, rho):
         """RJS
