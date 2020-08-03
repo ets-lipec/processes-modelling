@@ -2,6 +2,8 @@
 
 This repository contains all the codes written to model processes developped at the LIPEC.
 
+In the file requirements.txt, all the required python packages are listed.
+
 ## Rotary Jet-Spinning
 
 
@@ -53,22 +55,10 @@ Rc : Radius of the collector (m)
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
 
+Prediction of the effect of several parameters on the final radius.
 
-**Effect of the angular velocity on the final radius**
-
-*final_radius_omega.py*
-
-**Effect of the collector distance on the final radius**
-
-*final_radius_Rc.py*
-
-**Effect of the orifice radius on the final radius**
-
-*final_radius_a.py*
-
-**Effect of the reservoir radius on the final radius**
-
-*final_radius(s0).py*
+The following parameters were studied : angular velocity, collector distance, orifice radius,
+                                        reservoir radius, density, surface tension, viscosity.
 
 
 
@@ -97,7 +87,57 @@ U : Initial axial velocity (m/s)
 <img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
 
 
-*Radius_x.py*
+### How this code works ?
+
+**Classes**
+This code is divided in several classes :
+         - Deck : get the value in deck.yaml
+         - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
+         - RJSMachine : stock the values of deck concerning the machine in variables that will be reuse
+         - RJSModel : contain all equations
+         - Data : compute the datas for which we want to draw graphics
+         - Organization : organize the previous data in order to draw graphics
+         - PointGraph : draw the graphic with the organized data and save it in the folder Graphics
+
+**What the user have to do ?**
+- Adapt the values of the polymer and machine in the file : deck.yaml
+- The only file which need to be run is the main.py. This script brings together all classes.
+
+
+## Viscosity
+
+### Compute the viscosity as a function of the temperature and the shear stress  
+
+<img src="https://latex.codecogs.com/gif.latex?\eta&space;=&space;B&space;exp(\frac{E_{\tau&space;}}{RT}-b\tau&space;^{s})" title="\eta = B exp(\frac{E_{\tau }}{RT}-b\tau ^{s})" />
+
+
+&nbsp;
+
+
+<img src="https://latex.codecogs.com/gif.latex?\eta" title="\eta" /> : Melt viscosity (Pa.s)
+
+<img src="https://latex.codecogs.com/gif.latex?\tau" title="\tau" /> : Shear stress
+
+<img src="https://latex.codecogs.com/gif.latex?E_{\tau&space;}" title="E_{\tau }" /> : activation energy of viscous-elastic flow under condition of <img src="https://latex.codecogs.com/gif.latex?\tau" title="\tau" /> = constant
+
+R : gas constant in J/(mol.K)
+
+T : temperature of experiment in K
+
+B, b, s : Constants of the material (in this case : s=1/2)
 
 
 
+### How this code works ?
+
+**Classes**
+This code is divided in several classes :
+         - Deck : get the value in viscosity.yaml
+         - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
+         - Model : contain the equation to predict the viscosity
+         - Graph : calculate the data with the model, draw the graphic and save it in the folder Graphics
+
+
+**What the user have to do ?**
+- Adapt the values of the polymer in the file : viscosity.yaml
+- The only file which need to be run is the main_viscosity.py. This script brings together all classes.
