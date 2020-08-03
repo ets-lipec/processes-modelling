@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 from rotary_jet_spinning import *
 
 
@@ -11,4 +14,10 @@ polymer = Polymer(deck)
 
 model = RJSModel(polymer, machine)
 
-graph = Graph(deck, polymer, machine, model)
+data = Data(deck, polymer, machine, model)
+
+organization = Organization(data, deck, machine, polymer, model)
+
+organized_data = organization.organize_data(data, deck, machine, polymer, model)
+
+graph = PointGraph(organized_data)
