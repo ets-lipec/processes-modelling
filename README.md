@@ -90,7 +90,6 @@ U : Initial axial velocity (m/s)
 ### How this code works ?
 
 **Classes**
-&nbsp;
 This code is divided in several classes :
          - Deck : get the value in deck.yaml
          - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
@@ -132,7 +131,6 @@ B, b, s : Constants of the material (in this case : s=1/2)
 ### How this code works ?
 
 **Classes**
-&nbsp;
 This code is divided in several classes :
          - Deck : get the value in viscosity.yaml
          - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
