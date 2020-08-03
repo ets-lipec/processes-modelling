@@ -21,7 +21,6 @@ class Graph:
 
         discretisation = int(deck.doc['Discretisation'])
         # The higher the discretisation number is, the finer the discretisation will be,
-        
         # there will be more points on the graphic.
         
         T = [463, 483, 503, 533, 553]
