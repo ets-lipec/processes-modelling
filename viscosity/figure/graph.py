@@ -39,7 +39,7 @@ class Graph:
         for k in range(len(T)):
             log_melt_viscosity = []
             for i in range(discretisation):
-                melt_viscosity = model.viscosity(polymer.B, polymer.E, R, T[k], polymer.b, shear_stress_power[i])
+                melt_viscosity = model.viscosity(polymer.constantB, polymer.energy, R, T[k], polymer.constantb, shear_stress_power[i])
                 log_melt_viscosity.append(log10(melt_viscosity))
             log_melt_viscosity = numpy.array(log_melt_viscosity)
             axes.plot(shear_stress_power, log_melt_viscosity, color[k], label = legend[k])
