@@ -99,7 +99,7 @@ U : Initial axial velocity (m/s)
 - PointGraph : draw the graphic with the organized data and save it in the folder Graphics
 
 **What the user have to do ?**
-- Adapt the values of the polymer and machine in the file : deck.yaml : 
+- Adapt the values of the polymer and machine in the file deck.yaml : 
 
 ```yaml
 Polymers:
@@ -167,7 +167,7 @@ B, b, s : Constants of the material (in this case : s=1/2)
 
 
 **What the user have to do ?**
-- Adapt the values in the file : viscosity.yaml :
+- Adapt the values in the file viscosity.yaml :
 
 ```yaml
 Polymers:
