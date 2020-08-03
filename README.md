@@ -99,8 +99,38 @@ U : Initial axial velocity (m/s)
 - PointGraph : draw the graphic with the organized data and save it in the folder Graphics
 
 **What the user have to do ?**
-- Adapt the values of the polymer and machine in the file : deck.yaml
+- Adapt the values of the polymer and machine in the file : deck.yaml : 
+
+```yaml
+Polymers:
+  Name: 'Polypropylene'
+  Viscosity: 0.63
+  Density: 900
+  Surface Tension: 0.0436
+
+Machines:
+  Name: 'Super Floss Maxx'
+  Orifice Radius: 0.001512
+  Collector Radius: 0.3302
+  Reservoir Radius: 0.06985
+  Angular Velocity : 57.5
+
+Discretisation: 20
+```
+
+The Discretisation number is the number of points on the graphics.
+
+- Install all required python packages listed in requirements.txt: 
+
+```linux
+pip install -r requirements.txt
+```
+
 - The only file which need to be run is the main.py. This script brings together all classes.
+
+```linux
+python main.py
+```
 
 
 ## Viscosity
@@ -137,5 +167,31 @@ B, b, s : Constants of the material (in this case : s=1/2)
 
 
 **What the user have to do ?**
-- Adapt the values of the polymer in the file : viscosity.yaml
+- Adapt the values in the file : viscosity.yaml :
+
+```yaml
+Polymers:
+  Name: 'PP Shell'
+  Constant B: 1.5
+  Constant b: 0.0043
+  Activation Energy: 45522
+
+Constants:
+  Gas Constant: 8.314
+
+Discretisation: 20
+```
+
+The Discretisation number is the number of points on the graphics.
+
+- Install all required python packages listed in requirements.txt: 
+
+```linux
+pip install -r requirements.txt
+```
+
 - The only file which need to be run is the main_viscosity.py. This script brings together all classes.
+
+```linux
+python main_viscosity.py
+```
