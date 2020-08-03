@@ -90,14 +90,13 @@ U : Initial axial velocity (m/s)
 ### How this code works ?
 
 **Classes**
-This code is divided in several classes :
-         - Deck : get the value in deck.yaml
-         - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
-         - RJSMachine : stock the values of deck concerning the machine in variables that will be reuse
-         - RJSModel : contain all equations
-         - Data : compute the datas for which we want to draw graphics
-         - Organization : organize the previous data in order to draw graphics
-         - PointGraph : draw the graphic with the organized data and save it in the folder Graphics
+- Deck : get the value in deck.yaml
+- Polymer : stock the values of deck concerning the polymer in variables that will be reuse
+- RJSMachine : stock the values of deck concerning the machine in variables that will be reuse
+- RJSModel : contain all equations
+- Data : compute the datas for which we want to draw graphics
+- Organization : organize the previous data in order to draw graphics
+- PointGraph : draw the graphic with the organized data and save it in the folder Graphics
 
 **What the user have to do ?**
 - Adapt the values of the polymer and machine in the file : deck.yaml
@@ -131,11 +130,10 @@ B, b, s : Constants of the material (in this case : s=1/2)
 ### How this code works ?
 
 **Classes**
-This code is divided in several classes :
-         - Deck : get the value in viscosity.yaml
-         - Polymer : stock the values of deck concerning the polymer in variables that will be reuse
-         - Model : contain the equation to predict the viscosity
-         - Graph : calculate the data with the model, draw the graphic and save it in the folder Graphics
+- Deck : get the value in viscosity.yaml
+- Polymer : stock the values of deck concerning the polymer in variables that will be reuse
+- Model : contain the equation to predict the viscosity
+- Graph : calculate the data with the model, draw the graphic and save it in the folder Graphics
 
 
 **What the user have to do ?**
