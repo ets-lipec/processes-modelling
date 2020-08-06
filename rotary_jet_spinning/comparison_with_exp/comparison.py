@@ -19,6 +19,7 @@ Inputs : Concerning the polymer : the surface tension, the density, the viscosit
 All data are in SI units.
 """
 
+# This code needs to be rearrange when we will get our experimental values
 
 import numpy
 import matplotlib.pyplot as plt
