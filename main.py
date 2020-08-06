@@ -21,3 +21,5 @@ organization = Organization(data, deck, machine, polymer, model)
 organized_data = organization.organize_data(data, deck, machine, polymer, model)
 
 graph = PointGraph(organized_data)
+
+comparison = Comparison(deck, polymer, machine, model)
