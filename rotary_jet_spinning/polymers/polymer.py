@@ -11,3 +11,9 @@ class Polymer:
         self.viscosity = float(deck.doc['Polymers']['Viscosity'])
         self.surface_tension = float(deck.doc['Polymers']['Surface Tension'])
         self.kinematic_viscosity = self.viscosity / self.density
+        self.minimum_viscosity = float(deck.doc['Range Polymer Parameters']['Minimum Viscosity'])
+        self.maximum_viscosity = float(deck.doc['Range Polymer Parameters']['Maximum Viscosity'])
+        self.minimum_density = float(deck.doc['Range Polymer Parameters']['Minimum Density'])
+        self.maximum_density = float(deck.doc['Range Polymer Parameters']['Maximum Density'])
+        self.minimum_surface_tension = float(deck.doc['Range Polymer Parameters']['Minimum Surface Tension'])
+        self.maximum_surface_tension = float(deck.doc['Range Polymer Parameters']['Maximum Surface Tension'])
