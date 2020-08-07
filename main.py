@@ -12,13 +12,15 @@ machine = RJSMachine(deck)
 
 polymer = Polymer(deck)
 
+features = GraphFeatures(deck)
+
 model = RJSModel(polymer, machine)
 
-data = Data(deck, polymer, machine, model)
+data = Data(deck, polymer, machine, model, features)
 
-organization = Organization(data, deck, machine, polymer, model)
+organization = Organization(data, deck, machine, polymer, model, features)
 
-organized_data = organization.organize_data(data, deck, machine, polymer, model)
+organized_data = organization.organize_data(data, deck, machine, polymer, model, features)
 
 graph = PointGraph(organized_data)
 
