@@ -12,7 +12,7 @@ class RJSModel:
         self.omega_th = self.critical_rotational_velocity_threshold(polymer.surface_tension, machine.orifice_radius, machine.reservoir_radius, polymer.density)
         self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
         self.nu = self.kinematic_viscosity(polymer.viscosity, polymer.density)
-        self.final_radius(machine.orifice_radius, self.initial_velocity, self.nu, machine.collector_radius, machine.omega)
+        self.final_radius(machine.orifice_radius, self.initial_velocity, self.nu, machine.collector_radius, machine.angular_velocity)
     
 
     def critical_rotational_velocity_threshold(self, surface_tension, orifice_radius, s0, rho):
