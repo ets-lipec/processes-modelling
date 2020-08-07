@@ -5,4 +5,4 @@ from .machines import *
 from .models import *
 from .polymers import *
 from .data_organization import *
-from .comparison_with_exp import *
+#from .comparison_with_exp import *

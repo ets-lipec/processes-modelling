@@ -56,12 +56,10 @@ class Data:
                                                            machine.reservoir_radius, polymer.density))
             initial_velocity.append(model.Initial_velocity(omega_th[l], machine.reservoir_radius))
         
-        nu = model.kinematic_viscosity(polymer.viscosity, polymer.density)
-        
         Final_radius = []
         for k in range(discretisation):
             Final_radius.append(model.final_radius(orifice_radius[k], initial_velocity[k],
-                                            nu, machine.collector_radius, machine.omega))
+                                            polymer.kinematic_viscosity, machine.collector_radius, machine.omega))
 
         return [orifice_radius, Final_radius]
         
@@ -78,15 +76,13 @@ class Data:
                                                   
         initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
         
-        nu = model.kinematic_viscosity(polymer.viscosity, polymer.density)
-        
         omega = numpy.linspace(2000//60, 37000//60, discretisation)
         omega = omega.tolist()
         
         Final_radius = []
         for k in range(discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity,
-                                            nu, machine.collector_radius, omega[k]))
+                                            polymer.kinematic_viscosity, machine.collector_radius, omega[k]))
         
         return [omega, Final_radius]
 
@@ -103,15 +99,13 @@ class Data:
                                                   
         initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
         
-        nu = model.kinematic_viscosity(polymer.viscosity, polymer.density)
-        
         Rc = numpy.linspace(0.1, 0.5, discretisation)
         Rc = Rc.tolist()
         
         Final_radius = []
         for k in range(discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity,
-                                            nu, Rc[k], machine.omega))
+                                            polymer.kinematic_viscosity, Rc[k], machine.omega))
 
         return [Rc, Final_radius]
         
@@ -133,12 +127,10 @@ class Data:
                                                            machine.orifice_radius, s0[l], polymer.density))
             initial_velocity.append(model.Initial_velocity(omega_th[l], s0[l]))
         
-        nu = model.kinematic_viscosity(polymer.viscosity, polymer.density)
-        
         Final_radius = []
         for k in range(discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity[k],
-                                            nu, machine.collector_radius, machine.omega))
+                                            polymer.kinematic_viscosity, machine.collector_radius, machine.omega))
 
         return [s0, Final_radius]
 
@@ -187,12 +179,10 @@ class Data:
                                                                  machine.reservoir_radius, polymer.density))
             initial_velocity.append(model.Initial_velocity(omega_th[l], machine.reservoir_radius))
         
-        nu = model.kinematic_viscosity(polymer.viscosity, polymer.density)
-        
         Final_radius = []
         for k in range(discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity[k],
-                                            nu, machine.collector_radius, machine.omega))
+                                            polymer.kinematic_viscosity, machine.collector_radius, machine.omega))
 
         return [surface_tension, Final_radius]
 
