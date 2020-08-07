@@ -7,6 +7,7 @@ from math import *
 class RJSModel:
 
     # Initializer Attributes
+    @cite('mellado_simple_2011')
     def __init__(self, polymer, machine):
         self.omega_th = self.critical_rotational_velocity_threshold(polymer.surface_tension, machine.orifice_radius, machine.reservoir_radius, polymer.density)
         self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
