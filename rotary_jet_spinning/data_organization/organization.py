@@ -22,12 +22,12 @@ class Organization:
                 "title": " %s / %s " % (machine.name, polymer.name),
                 "save_as": "./graphics/final_radius_orifice_radius.pdf"}] 
                 
-        organized_data.append({"x": data.final_radius_omega(deck, polymer, machine, model, features)[0],
+        organized_data.append({"x": data.final_radius_angular_velocity(deck, polymer, machine, model, features)[0],
                      "x_legend": "Angular velocity (rounds per second)",
-                     "y": data.final_radius_omega(deck, polymer, machine, model, features)[1],
+                     "y": data.final_radius_angular_velocity(deck, polymer, machine, model, features)[1],
                      "y_legend" : "Final radius (m)", "color": "bo",
                      "title": " %s / %s " % (machine.name, polymer.name),
-                     "save_as": "./graphics/final_radius_omega.pdf"})
+                     "save_as": "./graphics/final_radius_angular_velocity.pdf"})
                      
         organized_data.append({"x": data.final_radius_collector_radius(deck, polymer, machine, model, features)[0],
                      "x_legend": "Collector distance (m)",

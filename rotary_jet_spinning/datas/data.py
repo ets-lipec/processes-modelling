@@ -30,7 +30,7 @@ class Data:
         self.machine = machine
         self.model = model
         self.final_radius_orifice_radius(deck, polymer, machine, model, features)
-        self.final_radius_omega(deck, polymer, machine, model, features)
+        self.final_radius_angular_velocity(deck, polymer, machine, model, features)
         self.final_radius_collector_radius(deck, polymer, machine, model, features)
         self.final_radius_reservoir_radius(deck, polymer, machine, model, features)
         self.final_radius_density(deck, polymer, machine, model, features)
@@ -61,7 +61,7 @@ class Data:
         
 
     
-    def final_radius_omega(self, deck, polymer, machine, model, features):
+    def final_radius_angular_velocity(self, deck, polymer, machine, model, features):
         
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
