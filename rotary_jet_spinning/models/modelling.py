@@ -17,7 +17,8 @@ class RJSModel:
 
     def critical_rotational_velocity_threshold(self, surface_tension, orifice_radius, s0, rho):
         """RJS
-        
+        Prediction of the critical rotational velocity for jet ejection
+
         :Input:
         - *surface_tension* (float) - surface tension (kg/s^2)
         - *orifice_radius* (float) - radius of the orifice (m)
@@ -32,7 +33,8 @@ class RJSModel:
         
     def Initial_velocity(self, omega_th, s0):
         """RJS
-        
+        Prediction of the initial velocity of the fiber
+
         :Input:
         - *omega_th* (float) - Critical rotational speed for jet ejection (rounds per second)
         - *s0* (float) - radius of the reservoir (m)
@@ -45,8 +47,10 @@ class RJSModel:
         
     def sigma(self, surface_tension, x_position, r0, initial_velocity):
         """RJS
-        
         sigma=surface_tension * x_position / (r0 * initial_velocity) * 10**(-3)
+
+        Sigma is used in the next function for the prediction of the fiber radius
+        as a function of the axial coordinate
         
         :Input:
         - *surface_tension* (float) - surface tension (kg/s^2)
@@ -62,7 +66,9 @@ class RJSModel:
         
     def radius(self, r0, rho, initial_velocity, x_position, mu, Sigma, omega):
         """RJS
-        
+        Prediction of the radius of the jet in steady state as a function of
+        the axial coordinate x
+
         :Input:
         - *r0* (float) - initial radius of the jet = orifice radius a (m)
         - *rho* (float) - density (kg/m^3)
@@ -81,7 +87,8 @@ class RJSModel:
         
     def final_radius(self, orifice_radius, initial_velocity, nu, Rc, omega):
         """RJS
-        
+        Prediction of the final radius
+
         :Input:
         - *orifice_radius* (float) - initial radius of the jet = orifice radius (m)
         - *initial_velocity* (float) - initial axial velocity (m/s)
@@ -97,6 +104,7 @@ class RJSModel:
         
     def kinematic_viscosity(self, mu, rho):
         """RJS
+        Compute the kinematic viscosity
         
         :Input:
         - *mu* (float) - viscosity (Pa.s)

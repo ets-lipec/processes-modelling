@@ -41,6 +41,7 @@ class Data:
 
 
     def final_radius_orifice_radius(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various orifice radius
         
         orifice_radius = numpy.linspace(0.0001, 0.001, features.discretisation)
         orifice_radius = orifice_radius.tolist()
@@ -62,6 +63,7 @@ class Data:
 
     
     def final_radius_angular_velocity(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various angular velocities
         
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
@@ -81,6 +83,7 @@ class Data:
         
         
     def final_radius_collector_radius(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various collector distances
 
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
@@ -100,6 +103,7 @@ class Data:
 
     
     def final_radius_reservoir_radius(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various reservoir radius
 
         s0 = numpy.linspace(0.01, 0.1, features.discretisation)
         s0 = s0.tolist()
@@ -121,6 +125,7 @@ class Data:
         
 
     def final_radius_density(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various polymer density
 
         rho = numpy.linspace(900, 1500, features.discretisation)
         rho = rho.tolist()
@@ -144,6 +149,7 @@ class Data:
         
 
     def final_radius_surface_tension(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various polymer surface tension
 
         surface_tension = numpy.linspace(0.02, 0.06, features.discretisation)
         surface_tension = surface_tension.tolist()
@@ -165,6 +171,7 @@ class Data:
 
     
     def final_radius_viscosity(self, deck, polymer, machine, model, features):
+        # Prediction of the final fiber radius for various polymer viscosity
 
         mu = numpy.linspace(0.1, 1.0, features.discretisation)
         mu = mu.tolist()
@@ -188,6 +195,8 @@ class Data:
 
 
     def radius_x(self, deck, polymer, machine, model, features):
+        # Prediction of the radius of the jet in steady state as a function of
+        # the axial coordinate x
 
         x_position = numpy.linspace(machine.reservoir_radius, machine.collector_radius-machine.reservoir_radius, features.discretisation)
         x_position = x_position.tolist()
