@@ -33,7 +33,7 @@ a : Radius of the orifice (m)
 
 <img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg&space;/&space;m^{3}" title="kg / m^{3}" />)
 
-
+[Explanation of where this equation comes from](mellado_equations.md)
 
 ### Predict the final radius of the fiber
 
@@ -54,6 +54,8 @@ U : Initial axial velocity (m/s)
 Rc : Radius of the collector (m)
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
+
+[Explanation of where this equation comes from](mellado_equations.md)
 
 Prediction of the effect of several parameters on the final radius.
 
