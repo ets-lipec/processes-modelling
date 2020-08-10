@@ -10,7 +10,7 @@ Here is detailed how to find the equations used in the model of the Rotary Jet-S
 &nbsp;
 
 
-The jet ejection is governed by the balance between inertial force and capillary force.
+The jet ejection is governed by the balance between inertial and capillary forces:
 
 Inertial force : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;^{2}&space;s_{0}&space;a^{3}" title="\rho \Omega ^{2} s_{0} a^{3}" />
 
@@ -51,7 +51,7 @@ Centrigugal force : <img src="https://latex.codecogs.com/gif.latex?F_{c}&space;=
 
 Equal those 2 forces : <img src="https://latex.codecogs.com/gif.latex?F_{v}&space;=&space;F_{c}" title="F_{v} = F_{c}" />
 
-Besides, we want to predict the final radius. 
+Besides, we want to predict the final radius : 
 
 So, <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}&space;-&space;s_{0}" title="x = R_{c} - s_{0}" />
 
