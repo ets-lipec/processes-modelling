@@ -31,7 +31,7 @@ a : Radius of the orifice (m)
 
 <img src="https://latex.codecogs.com/gif.latex?\rho" title="\rho" /> : Density (<img src="https://latex.codecogs.com/gif.latex?kg&space;/&space;m^{3}" title="kg / m^{3}" />)
 
-*critical_rotational_velocity_threshold.py*
+[Explanation of where this equation comes from](mellado_equations.md)
 
 ### Predict the final radius of the fiber
 
@@ -53,6 +53,7 @@ Rc : Radius of the collector (m)
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
 
+[Explanation of where this equation comes from](mellado_equations.md)
 
 **Effect of the angular velocity on the final radius**
 
