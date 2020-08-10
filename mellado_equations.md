@@ -17,7 +17,11 @@ Inertial force : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omeg
 Capillary force : <img src="https://latex.codecogs.com/gif.latex?\sigma&space;a" title="\sigma a" />
 
 By equaling those 2 forces : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;{_{th}}^{2}&space;s_{0}&space;a^{3}&space;=&space;\sigma&space;a" title="\rho \Omega {_{th}}^{2} s_{0} a^{3} = \sigma a" />
+
 we find again the formula of the critical rotational velocity.
+
+
+&nbsp;
 
 
 ## The final radius of the fiber
@@ -47,10 +51,15 @@ Centrigugal force : <img src="https://latex.codecogs.com/gif.latex?F_{c}&space;=
 
 Equal those 2 forces : <img src="https://latex.codecogs.com/gif.latex?F_{v}&space;=&space;F_{c}" title="F_{v} = F_{c}" />
 
-Besides, we want to predict the final radius. So, <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}&space;-&space;s_{0}" title="x = R_{c} - s_{0}" />
-Approximation : <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}" title="x = R_{c}" /> because <img src="https://latex.codecogs.com/gif.latex?R_{c}&space;\gg&space;s_{0}" title="R_{c} \gg s_{0}" />
+Besides, we want to predict the final radius. 
 
-Whis all this, we find again the formula to get the final radius of the fiber.
+So, <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}&space;-&space;s_{0}" title="x = R_{c} - s_{0}" />
+
+Approximation : <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}" title="x = R_{c}" /> 
+
+because <img src="https://latex.codecogs.com/gif.latex?R_{c}&space;\gg&space;s_{0}" title="R_{c} \gg s_{0}" />
+
+With all this, we find again the formula to get the final radius of the fiber.
 
 
 ## Glossary
