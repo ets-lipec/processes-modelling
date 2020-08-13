@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from math import *
+from math import sqrt
 
 
 class RJSModel:
-# @cite('mellado_simple_2011')
-# [mellado_simple_2011]
+# from [mellado_simple_2011] see biblio.bib
 
     # Initializer Attributes
     def __init__(self, polymer, machine):
