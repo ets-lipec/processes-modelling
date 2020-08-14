@@ -47,15 +47,15 @@ class Data:
         orifice_radius = orifice_radius.tolist()
         
         omega_th = []
-        initial_velocity = []
+        init_velocity = []
         for l in range(features.discretisation):
             omega_th.append(model.critical_rotational_velocity_threshold(polymer.surface_tension, orifice_radius[l],
                                                            machine.reservoir_radius, polymer.density))
-            initial_velocity.append(model.Initial_velocity(omega_th[l], machine.reservoir_radius))
+            init_velocity.append(model.initial_velocity(omega_th[l], machine.reservoir_radius))
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(orifice_radius[k], initial_velocity[k],
+            Final_radius.append(model.final_radius(orifice_radius[k], init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
 
         return [orifice_radius, Final_radius]
@@ -68,14 +68,14 @@ class Data:
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
                                                   
-        initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
+        init_velocity = model.initial_velocity(omega_th, machine.reservoir_radius)
         
         omega = numpy.linspace(machine.minimum_angular_velocity, machine.maximum_angular_velocity, features.discretisation)
         omega = omega.tolist()
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity,
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             polymer.kinematic_viscosity, machine.collector_radius, omega[k]))
         
         return [omega, Final_radius]
@@ -88,14 +88,14 @@ class Data:
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
                                                   
-        initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
+        init_velocity = model.initial_velocity(omega_th, machine.reservoir_radius)
         
         Rc = numpy.linspace(machine.minimum_collector_radius, machine.maximum_collector_radius, features.discretisation)
         Rc = Rc.tolist()
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity,
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             polymer.kinematic_viscosity, Rc[k], machine.angular_velocity))
 
         return [Rc, Final_radius]
@@ -109,15 +109,15 @@ class Data:
         s0 = s0.tolist()
         
         omega_th = []
-        initial_velocity = []
+        init_velocity = []
         for l in range(features.discretisation):
             omega_th.append(model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                            machine.orifice_radius, s0[l], polymer.density))
-            initial_velocity.append(model.Initial_velocity(omega_th[l], s0[l]))
+            init_velocity.append(model.initial_velocity(omega_th[l], s0[l]))
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity[k],
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
 
         return [s0, Final_radius]
@@ -131,17 +131,17 @@ class Data:
         rho = rho.tolist()
 
         omega_th = []
-        initial_velocity = []
+        init_velocity = []
         nu = []
         for l in range(features.discretisation):
             omega_th.append(model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, rho[l]))
-            initial_velocity.append(model.Initial_velocity(omega_th[l], machine.reservoir_radius))
+            init_velocity.append(model.initial_velocity(omega_th[l], machine.reservoir_radius))
             nu.append(model.kinematic_viscosity(polymer.viscosity, rho[l]))
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity[k], nu[k],
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k], nu[k],
                                                    machine.collector_radius, machine.angular_velocity))
         
         return [rho, Final_radius]
@@ -155,15 +155,15 @@ class Data:
         surface_tension = surface_tension.tolist()
 
         omega_th = []
-        initial_velocity = []
+        init_velocity = []
         for l in range(features.discretisation):
             omega_th.append(model.critical_rotational_velocity_threshold(surface_tension[l], machine.orifice_radius,
                                                                  machine.reservoir_radius, polymer.density))
-            initial_velocity.append(model.Initial_velocity(omega_th[l], machine.reservoir_radius))
+            init_velocity.append(model.initial_velocity(omega_th[l], machine.reservoir_radius))
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity[k],
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
 
         return [surface_tension, Final_radius]
@@ -179,7 +179,7 @@ class Data:
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
         
-        initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
+        init_velocity = model.initial_velocity(omega_th, machine.reservoir_radius)
         
         nu = []
         for l in range(features.discretisation):
@@ -187,7 +187,7 @@ class Data:
         
         Final_radius = []
         for k in range(features.discretisation):
-            Final_radius.append(model.final_radius(machine.orifice_radius, initial_velocity,
+            Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             nu[k], machine.collector_radius, machine.angular_velocity))
 
         return [mu, Final_radius]
@@ -204,16 +204,16 @@ class Data:
         omega_th = model.critical_rotational_velocity_threshold(polymer.surface_tension,
                                                   machine.orifice_radius, machine.reservoir_radius, polymer.density)
                                                   
-        initial_velocity = model.Initial_velocity(omega_th, machine.reservoir_radius)
+        init_velocity = model.initial_velocity(omega_th, machine.reservoir_radius)
         
         Sigma = []
         for l in range(features.discretisation):
             Sigma.append(model.sigma(polymer.surface_tension, x_position[l], machine.orifice_radius,
-                       initial_velocity))
+                       init_velocity))
         
         Radius = []
         for k in range(features.discretisation):
-            Radius.append(model.radius(machine.orifice_radius, polymer.density, initial_velocity, x_position[k], polymer.viscosity, Sigma[k], machine.angular_velocity))
+            Radius.append(model.radius(machine.orifice_radius, polymer.density, init_velocity, x_position[k], polymer.viscosity, Sigma[k], machine.angular_velocity))
 
         return [x_position, Radius]
         

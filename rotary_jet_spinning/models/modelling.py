@@ -10,9 +10,9 @@ class RJSModel:
     # Initializer Attributes
     def __init__(self, polymer, machine):
         self.omega_th = self.critical_rotational_velocity_threshold(polymer.surface_tension, machine.orifice_radius, machine.reservoir_radius, polymer.density)
-        self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
+        self.init_velocity = self.initial_velocity(self.omega_th, machine.reservoir_radius)
         self.nu = self.kinematic_viscosity(polymer.viscosity, polymer.density)
-        self.final_radius(machine.orifice_radius, self.initial_velocity, self.nu, machine.collector_radius, machine.angular_velocity)
+        self.final_radius(machine.orifice_radius, self.init_velocity, self.nu, machine.collector_radius, machine.angular_velocity)
     
 
     def critical_rotational_velocity_threshold(self, surface_tension, orifice_radius, s0, rho):
@@ -31,7 +31,7 @@ class RJSModel:
         """
         return sqrt(surface_tension/(orifice_radius**2*s0*rho))
         
-    def Initial_velocity(self, omega_th, s0):
+    def initial_velocity(self, omega_th, s0):
         """RJS
         Prediction of the initial velocity of the fiber
 
