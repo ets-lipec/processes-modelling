@@ -88,8 +88,4 @@ V : Axial velocity (m/s)
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega" title="\Omega" /> : Angular velocity (RPS)
 
-<<<<<<< HEAD
 <img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}" title="\Omega _{th}" /> : Critical rotational velocity for jet ejection (RPS)
-=======
-<img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}" title="\Omega _{th}" /> : Critical rotational velocity for jet ejection (RPS)
->>>>>>> f3c4f03a977059ca4f013ba64f45c1bd2a586c9c
