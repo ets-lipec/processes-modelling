@@ -4,6 +4,14 @@ Polymers:
   Density: 900
   Surface Tension: 0.0436
 
+Range Polymer Parameters:
+  Minimum Viscosity: 0.1
+  Maximum Viscosity: 1.0
+  Minimum Density: 900
+  Maximum Density: 1500
+  Minimum Surface Tension: 0.02
+  Maximum Surface Tension: 0.06
+
 Machines:
   Name: 'Super Floss Maxx'
   Orifice Radius: 0.001512
@@ -11,5 +19,16 @@ Machines:
   Reservoir Radius: 0.06985
   Angular Velocity : 57.5
 
-Discretisation: 20
+Range Machine Parameters:
+  Minimum Orifice Radius: 0.0001
+  Maximum Orifice Radius: 0.001
+  Minimum Collector Radius: 0.1
+  Maximum Collector Radius: 0.5
+  Minimum Reservoir Radius: 0.01
+  Maximum Reservoir Radius: 0.1
+  Minimum Angular Velocity: 30
+  Maximum Angular Velocity: 600
+
+Graphic features:
+  Discretisation: 20
   

@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+>>>>>>> f3c4f03a977059ca4f013ba64f45c1bd2a586c9c
 import matplotlib.pyplot as plt
 
 
@@ -18,8 +24,11 @@ class PointGraph:
             axes.set_ylabel(dataset["y_legend"], fontsize=16)
             axes.set_title(dataset["title"], fontsize=16, y=1.)
             plt.savefig(dataset["save_as"], format="pdf")
+<<<<<<< HEAD
 
 
 
     
     
+=======
+>>>>>>> f3c4f03a977059ca4f013ba64f45c1bd2a586c9c
