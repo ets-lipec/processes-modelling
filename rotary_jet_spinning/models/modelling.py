@@ -1,22 +1,24 @@
-from math import *
-from deck import Deck
-from machine import RJSMachine
-from polymer import Polymer
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-class RJSModel(RJSMachine, Polymer):
+from math import sqrt
+
+
+class RJSModel:
+# from [mellado_simple_2011] see biblio.bib
 
     # Initializer Attributes
     def __init__(self, polymer, machine):
         self.omega_th = self.critical_rotational_velocity_threshold(polymer.surface_tension, machine.orifice_radius, machine.reservoir_radius, polymer.density)
-        self.initial_velocity = self.Initial_velocity(self.omega_th, machine.reservoir_radius)
+        self.init_velocity = self.initial_velocity(self.omega_th, machine.reservoir_radius)
         self.nu = self.kinematic_viscosity(polymer.viscosity, polymer.density)
-        self.final_radius(machine.orifice_radius, self.initial_velocity, self.nu, machine.collector_radius, machine.omega)
-        #self.Sigma[k] = self.sigma(polymer.surface_tension, x_position[k], machine.orifice_radius, self.initial_velocity)
-        #self.Radius[k] = self.radius(machine.orifice_radius, polymer.density, self.initial_velocity, x_position[k], polymer.viscosity, self.sigma, machine.omega)
+        self.final_radius(machine.orifice_radius, self.init_velocity, self.nu, machine.collector_radius, machine.angular_velocity)
+    
 
     def critical_rotational_velocity_threshold(self, surface_tension, orifice_radius, s0, rho):
         """RJS
-        
+        Prediction of the critical rotational velocity for jet ejection
+
         :Input:
         - *surface_tension* (float) - surface tension (kg/s^2)
         - *orifice_radius* (float) - radius of the orifice (m)
@@ -29,9 +31,10 @@ class RJSModel(RJSMachine, Polymer):
         """
         return sqrt(surface_tension/(orifice_radius**2*s0*rho))
         
-    def Initial_velocity(self, omega_th, s0):
+    def initial_velocity(self, omega_th, s0):
         """RJS
-        
+        Prediction of the initial velocity of the fiber
+
         :Input:
         - *omega_th* (float) - Critical rotational speed for jet ejection (rounds per second)
         - *s0* (float) - radius of the reservoir (m)
@@ -44,8 +47,10 @@ class RJSModel(RJSMachine, Polymer):
         
     def sigma(self, surface_tension, x_position, r0, initial_velocity):
         """RJS
-        
         sigma=surface_tension * x_position / (r0 * initial_velocity) * 10**(-3)
+
+        Sigma is used in the next function for the prediction of the fiber radius
+        as a function of the axial coordinate
         
         :Input:
         - *surface_tension* (float) - surface tension (kg/s^2)
@@ -61,7 +66,9 @@ class RJSModel(RJSMachine, Polymer):
         
     def radius(self, r0, rho, initial_velocity, x_position, mu, Sigma, omega):
         """RJS
-        
+        Prediction of the radius of the jet in steady state as a function of
+        the axial coordinate x
+
         :Input:
         - *r0* (float) - initial radius of the jet = orifice radius a (m)
         - *rho* (float) - density (kg/m^3)
@@ -80,7 +87,8 @@ class RJSModel(RJSMachine, Polymer):
         
     def final_radius(self, orifice_radius, initial_velocity, nu, Rc, omega):
         """RJS
-        
+        Prediction of the final radius
+
         :Input:
         - *orifice_radius* (float) - initial radius of the jet = orifice radius (m)
         - *initial_velocity* (float) - initial axial velocity (m/s)
@@ -96,6 +104,7 @@ class RJSModel(RJSMachine, Polymer):
         
     def kinematic_viscosity(self, mu, rho):
         """RJS
+        Compute the kinematic viscosity
         
         :Input:
         - *mu* (float) - viscosity (Pa.s)
