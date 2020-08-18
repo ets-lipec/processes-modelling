@@ -1,8 +1,8 @@
 Polymers:
   Name: 'Polypropylene'
-  Viscosity: 0.63
-  Density: 900
-  Surface Tension: 0.0436
+  Viscosity: 0.63 # Pa.s
+  Density: 900 # kg/m3
+  Surface Tension: 0.0436 # kg/s2
 
 Range Polymer Parameters:
   Minimum Viscosity: 0.1
@@ -14,10 +14,10 @@ Range Polymer Parameters:
 
 Machines:
   Name: 'Super Floss Maxx'
-  Orifice Radius: 0.001512
-  Collector Radius: 0.3302
-  Reservoir Radius: 0.06985
-  Angular Velocity : 57.5
+  Orifice Radius: 0.001512 # m
+  Collector Radius: 0.3302 # m
+  Reservoir Radius: 0.06985 # m
+  Angular Velocity : 57.5 # round per seconds
 
 Range Machine Parameters:
   Minimum Orifice Radius: 0.0001
@@ -30,5 +30,4 @@ Range Machine Parameters:
   Maximum Angular Velocity: 600
 
 Graphic features:
-  Discretisation: 20
-  
+  Discretisation: 20 # steps
