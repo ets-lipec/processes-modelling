@@ -1,6 +1,6 @@
 
 #ignore output folder
-graphics/
+/graphics
 
 .DS_store
 # Byte-compiled / optimized / DLL files

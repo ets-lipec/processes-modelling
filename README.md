@@ -9,13 +9,13 @@ In the file requirements.txt, all the required python packages are listed.
 
 ### Concept of the process
 
-The rotary jet-spinning or centrifugal spinning process is a fiber production technology where a polymer melt or solution is extruded through the orifices of a high speed rotating spinneret. The centrifugal force imparted by the spinneret provide the mechanical driving force for extrusion of the fibers. The fibers can then be collected to form a non-woven mat.
+The rotary jet-spinning, or centrifugal spinning, process is a fiber production technology where a polymer melt or solution is extruded through the orifices of a high speed rotating spinneret. The centrifugal force imparted by the spinneret provide the mechanical driving force for extrusion of the fibers. The fibers can then be collected to form a non-woven mat.
 
 This code is designed to model this extrusion process and compute interesting parameters, such as the final fiber diameter and the critical jet ejection velocity, and the influence of processing variables.
 
 It is based on the work of Mellado & al., 2011 [mellado_simple_2011].
 
-### Predict the critical rotational velocity for jet ejection
+**Predict the critical rotational velocity for jet ejection**
 
 <img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}" title="\Omega _{th}=\sqrt{\frac{\sigma }{a^{2}s_{0}\rho }}" />
 
@@ -37,7 +37,7 @@ a : Radius of the orifice (m)
 
 [Details of the derivations here.](mellado_equations.md)
 
-### Predict the final radius of the fiber
+**Predict the final radius of the fiber**
 
 <img src="https://latex.codecogs.com/gif.latex?r=\frac{a&space;U^{1/2}&space;\nu^{1/2}&space;}{R_{c}^{3/2}\Omega&space;}" title="r=\frac{a U^{1/2} \nu^{1/2} }{R_{c}^{3/2}\Omega }" />
 
@@ -60,7 +60,7 @@ Rc : Radius of the collector (m)
 [Details of the derivations here.](mellado_equations.md)
 
 
-### Predict the radius of the jet in steady state as a function of the axial coordinate x
+**Predict the radius of the jet in steady state as a function of the axial coordinate x**
 
 <img src="https://latex.codecogs.com/gif.latex?r=r_{0}&space;\sqrt{\frac{\rho&space;U&space;x}{\mu&space;-\Sigma&space;&plus;\sqrt{(\mu&space;-\Sigma&space;)^{2}&plus;(\rho&space;\Omega&space;x^{2})^{2}}}}" title="r=r_{0} \sqrt{\frac{\rho U x}{\mu -\Sigma +\sqrt{(\mu -\Sigma )^{2}+(\rho \Omega x^{2})^{2}}}}" />
 
@@ -96,60 +96,14 @@ U : Initial axial velocity (m/s)
 - Organization : organize the previous data in order to draw graphics
 - PointGraph : draw the graphic with the organized data and save it in the folder Graphics
 
-**What the user have to do ?**
-- Adapt the values of the polymer and machine in the file deck.yaml :
-
-```yaml
-Polymers:
-  Name: 'Polypropylene'
-  Viscosity: 0.63
-  Density: 900
-  Surface Tension: 0.0436
-
-Machines:
-  Name: 'Super Floss Maxx'
-  Orifice Radius: 0.001512
-  Collector Radius: 0.3302
-  Reservoir Radius: 0.06985
-  Angular Velocity : 57.5
-
-Discretisation: 20
-```
-
-The Discretisation number is the number of points on the graphics.
-
-- Install all required python packages listed in requirements.txt:
-
-```linux
-pip install -r requirements.txt
-```
-
-- The only file which need to be run is the main.py. This script brings together all classes.
-
-```linux
-python main.py
-```
-
-The effect of processing parameters on the final radius is computed by the
-
-The following parameters were studied : angular velocity, collector distance, orifice radius, reservoir radius, density, surface tension, viscosity.
-
-### How this code works ?
-
-**Classes**
-- Deck : get the value in viscosity.yaml
-- Polymer : stock the values of deck concerning the polymer in variables that will be reuse
-- Model : contain the equation to predict the viscosity
-- Graph : calculate the data with the model, draw the graphic and save it in the folder Graphics
 
 ## How to run this code ?
 
-- Install all required python packages listed in requirements.txt:
-
+- Install all required python packages listed in requirements.txt :
 ```linux
 pip install -r requirements.txt
 ```
-- Run the code for the default example (Superfloss Max cotton candy machine):
+- Run the code for the default example (Superfloss Max cotton candy machine) :
 ```linux
 python main.py
 ```
@@ -164,7 +118,7 @@ The deck.yaml file contains all the necessary inputs for the code, you can modif
 - The *Discretisation number* will define the interval discretization and the number of points in the graphs.
 - All values need to be set in SI units.
 
-- Adapt the values directly in the file deck.yaml before run main.py:
+- Adapt the values directly in the file deck.yaml before running main.py:
 
 ```yaml
 Polymers:
