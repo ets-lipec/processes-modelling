@@ -66,6 +66,7 @@ class Comparison:
         scaling_factors_exp = numpy.array(scaling_factors_exp)
 
         radius_ratios = [1.0, 0.88, 0.79, 0.76, 0.69, 0.68, 0.64]
+        # When we will get our experimental values we will use the following line instead of the one just above
         # final_radius_exp = experimental.final_radius_exp
         # final_radius_0 = final_radius_exp[0]
         # radius_ratios = []
