@@ -4,6 +4,12 @@ Polymers:
   Density: 900
   Surface Tension: 0.0436
 
+  Values used by Mellado to compare with experiment:
+    Name: "Mellado's polymer PLA"
+    Viscosity: 0.113
+    Density: 1540
+    Surface Tension: 0.027
+
 Range Polymer Parameters:
   Minimum Viscosity: 0.1
   Maximum Viscosity: 1.0
@@ -17,7 +23,14 @@ Machines:
   Orifice Radius: 0.001512
   Collector Radius: 0.3302
   Reservoir Radius: 0.06985
-  Angular Velocity : 57.5
+  Angular Velocity: 57.5
+  
+  Values used by Mellado to compare with experiment:
+    Name: "Mellado's machine"
+    Orifice Radius: 0.000170
+    Collector Radius: 0.135
+    Angular Velocity: 200
+    Initial Axial Velocity: 0.1
 
 Range Machine Parameters:
   Minimum Orifice Radius: 0.0001
@@ -31,4 +44,22 @@ Range Machine Parameters:
 
 Graphic features:
   Discretisation: 20
+
+Experimental Datas:
+  Angular Velocities:
+    - 200
+    - 220
+    - 260
+    - 300
+    - 360
+    - 420
+    - 480
+  Final Radius:
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
+    - 
   
