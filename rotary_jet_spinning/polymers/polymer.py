@@ -17,3 +17,6 @@ class Polymer:
         self.maximum_density = float(deck.doc['Range Polymer Parameters']['Maximum Density'])
         self.minimum_surface_tension = float(deck.doc['Range Polymer Parameters']['Minimum Surface Tension'])
         self.maximum_surface_tension = float(deck.doc['Range Polymer Parameters']['Maximum Surface Tension'])
+        self.mellado_density = float(deck.doc['Polymers']['Values used by Mellado to compare with experiment']['Density'])
+        self.mellado_viscosity = float(deck.doc['Polymers']['Values used by Mellado to compare with experiment']['Viscosity'])
+        self.mellado_surface_tension = float(deck.doc['Polymers']['Values used by Mellado to compare with experiment']['Surface Tension'])
