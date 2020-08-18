@@ -6,6 +6,8 @@ from rotary_jet_spinning import *
 
 cwd = os.getcwd()
 
+os.makedirs("graphics", exist_ok=True)
+
 deck = Deck(cwd + "/" + "deck.yaml")
 
 machine = RJSMachine(deck)
