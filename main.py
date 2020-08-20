@@ -5,6 +5,7 @@ from rotary_jet_spinning import *
 
 
 cwd = os.getcwd()
+#c=current w=working d=directory
 
 deck = Deck(cwd + "/" + "deck.yaml")
 
