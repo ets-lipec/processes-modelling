@@ -19,6 +19,7 @@ All data are in SI units.
 
 
 import numpy
+from pandas import DataFrame
 
 
 class Data:
@@ -58,8 +59,14 @@ class Data:
             Final_radius.append(model.final_radius(orifice_radius[k], init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
 
+        # Put data in a dictionary
+        dictData = {'Orifice radius': orifice_radius, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Orifice radius', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaOrificeRadius.csv', index = None, header=False)
+
         return [orifice_radius, Final_radius]
-        
+
 
     
     def final_radius_angular_velocity(self, deck, polymer, machine, model, features):
@@ -78,6 +85,12 @@ class Data:
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             polymer.kinematic_viscosity, machine.collector_radius, omega[k]))
         
+        # Put data in a dictionary
+        dictData = {'Angular Velocity': omega, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Angular Velocity', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaAngularVelocity.csv', index = None, header=False)
+
         return [omega, Final_radius]
 
         
@@ -97,6 +110,12 @@ class Data:
         for k in range(features.discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             polymer.kinematic_viscosity, Rc[k], machine.angular_velocity))
+
+        # Put data in a dictionary
+        dictData = {'Collector Radius': Rc, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Collector Radius', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaCollectorRadius.csv', index = None, header=False)
 
         return [Rc, Final_radius]
         
@@ -119,6 +138,12 @@ class Data:
         for k in range(features.discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
+
+        # Put data in a dictionary
+        dictData = {'Reservoir Radius': s0, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Reservoir Radius', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaReservoirRadius.csv', index = None, header=False)
 
         return [s0, Final_radius]
 
@@ -143,7 +168,13 @@ class Data:
         for k in range(features.discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k], nu[k],
                                                    machine.collector_radius, machine.angular_velocity))
-        
+
+        # Put data in a dictionary
+        dictData = {'Density': rho, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Density', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaDensity.csv', index = None, header=False)
+
         return [rho, Final_radius]
 
         
@@ -165,6 +196,12 @@ class Data:
         for k in range(features.discretisation):
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity[k],
                                             polymer.kinematic_viscosity, machine.collector_radius, machine.angular_velocity))
+
+        # Put data in a dictionary
+        dictData = {'Surface Tension': surface_tension, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Surface Tension', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaSurfaceTension.csv', index = None, header=False)
 
         return [surface_tension, Final_radius]
 
@@ -190,6 +227,12 @@ class Data:
             Final_radius.append(model.final_radius(machine.orifice_radius, init_velocity,
                                             nu[k], machine.collector_radius, machine.angular_velocity))
 
+        # Put data in a dictionary
+        dictData = {'Viscosity': mu, 'Final fiber radius': Final_radius}
+        dataFrm = DataFrame(dictData, columns= ['Viscosity', 'Final fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaViscosity.csv', index = None, header=False)
+
         return [mu, Final_radius]
         
 
@@ -214,6 +257,12 @@ class Data:
         Radius = []
         for k in range(features.discretisation):
             Radius.append(model.radius(machine.orifice_radius, polymer.density, init_velocity, x_position[k], polymer.viscosity, Sigma[k], machine.angular_velocity))
+
+        # Put data in a dictionary
+        dictData = {'Axial Coordinate x': x_position, 'Fiber radius': Radius}
+        dataFrm = DataFrame(dictData, columns= ['Axial Coordinate x', 'Fiber radius'])
+        # Store the data in a file .csv in the folder data_files
+        export_csv = dataFrm .to_csv (r'./data_files/PandaAxialCoordinate.csv', index = None, header=False)
 
         return [x_position, Radius]
         
