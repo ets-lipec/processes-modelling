@@ -63,7 +63,7 @@ class Data:
         dictData = {'Orifice radius': orifice_radius, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Orifice radius', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaOrificeRadius.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaOrificeRadius.csv', index = None, header = True)
 
         return [orifice_radius, Final_radius]
 
@@ -89,7 +89,7 @@ class Data:
         dictData = {'Angular Velocity': omega, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Angular Velocity', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaAngularVelocity.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaAngularVelocity.csv', index = None, header = True)
 
         return [omega, Final_radius]
 
@@ -115,7 +115,7 @@ class Data:
         dictData = {'Collector Radius': Rc, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Collector Radius', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaCollectorRadius.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaCollectorRadius.csv', index = None, header = True)
 
         return [Rc, Final_radius]
         
@@ -143,7 +143,7 @@ class Data:
         dictData = {'Reservoir Radius': s0, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Reservoir Radius', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaReservoirRadius.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaReservoirRadius.csv', index = None, header = True)
 
         return [s0, Final_radius]
 
@@ -173,7 +173,7 @@ class Data:
         dictData = {'Density': rho, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Density', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaDensity.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaDensity.csv', index = None, header = True)
 
         return [rho, Final_radius]
 
@@ -201,7 +201,7 @@ class Data:
         dictData = {'Surface Tension': surface_tension, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Surface Tension', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaSurfaceTension.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaSurfaceTension.csv', index = None, header = True)
 
         return [surface_tension, Final_radius]
 
@@ -231,7 +231,7 @@ class Data:
         dictData = {'Viscosity': mu, 'Final fiber radius': Final_radius}
         dataFrm = DataFrame(dictData, columns= ['Viscosity', 'Final fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaViscosity.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaViscosity.csv', index = None, header = True)
 
         return [mu, Final_radius]
         
@@ -262,7 +262,7 @@ class Data:
         dictData = {'Axial Coordinate x': x_position, 'Fiber radius': Radius}
         dataFrm = DataFrame(dictData, columns= ['Axial Coordinate x', 'Fiber radius'])
         # Store the data in a file .csv in the folder data_files
-        export_csv = dataFrm .to_csv (r'./data_files/PandaAxialCoordinate.csv', index = None, header=False)
+        export_csv = dataFrm .to_csv (r'./data_files/PandaAxialCoordinate.csv', index = None, header = True)
 
         return [x_position, Radius]
         
