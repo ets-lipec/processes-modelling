@@ -7,11 +7,15 @@ from rotary_jet_spinning import *
 cwd = os.getcwd()
 #c=current w=working d=directory
 
+os.makedirs("graphics", exist_ok=True)
+
+os.makedirs("data_files", exist_ok=True)
+
 deck = Deck(cwd + "/" + "deck.yaml")
 
-machine = RJSMachine(deck)
-
 polymer = Polymer(deck)
+
+machine = RJSMachine(deck)
 
 features = GraphFeatures(deck)
 
