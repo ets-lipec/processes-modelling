@@ -6,4 +6,5 @@ from .models import *
 from .polymers import *
 from .data_organization import *
 from .graph_features import *
-#from .comparison_with_exp import *
+from .comparison_with_exp import *
+from .experimental import *
