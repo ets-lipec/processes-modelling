@@ -29,6 +29,8 @@ organized_data = organization.organize_data(data, deck, machine, polymer, model,
 
 graph = PointGraph(organized_data)
 
+save = Save(organized_data)
+
 experimental = Experimental(deck)
 
 comparison = Comparison(deck, polymer, machine, model, features, experimental)
