@@ -1,38 +1,26 @@
-# Where do Mellado' equations come from?
+# Where do Mellado's equations come from?
 
-Here is detailed how to find the equations used in the model of the Rotary Jet-Spinning process.
+Here are detailed the derivations of the equations used in Mellado's simple model of the Rotary Jet-Spinning process.
 
 ## The critical rotational velocity for jet ejection
 
-<img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}" title="\Omega _{th}=\sqrt{\frac{\sigma }{a^{2}s_{0}\rho }}" />
+The threshold for jet ejection is governed by the balance between inertial and capillary forces, when the centrifugal force overcome the capillary force in the spinneret nozzle the polymer jet is ejected.
 
-
-&nbsp;
-
-
-The jet ejection is governed by the balance between inertial and capillary forces:
-
-Inertial force : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;^{2}&space;s_{0}&space;a^{3}" title="\rho \Omega ^{2} s_{0} a^{3}" />
+Centrifugal force : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;^{2}&space;s_{0}&space;a^{3}" title="\rho \Omega ^{2} s_{0} a^{3}" />
 
 Capillary force : <img src="https://latex.codecogs.com/gif.latex?\sigma&space;a" title="\sigma a" />
 
-By equaling those 2 forces : <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;{_{th}}^{2}&space;s_{0}&space;a^{3}&space;=&space;\sigma&space;a" title="\rho \Omega {_{th}}^{2} s_{0} a^{3} = \sigma a" />
+By equaling those two forces, at the critical rotational speed: <img src="https://latex.codecogs.com/gif.latex?\rho&space;\Omega&space;{_{th}}^{2}&space;s_{0}&space;a^{3}&space;=&space;\sigma&space;a" title="\rho \Omega {_{th}}^{2} s_{0} a^{3} = \sigma a" />
 
-we find again the formula of the critical rotational velocity.
+We obtain again the formula of the critical rotational velocity:
 
-
-&nbsp;
-
+<img src="https://latex.codecogs.com/gif.latex?\Omega&space;_{th}=\sqrt{\frac{\sigma&space;}{a^{2}s_{0}\rho&space;}}" title="\Omega _{th}=\sqrt{\frac{\sigma }{a^{2}s_{0}\rho }}" />
 
 ## The final radius of the fiber
 
-<img src="https://latex.codecogs.com/gif.latex?r=\frac{a&space;U^{1/2}&space;\nu^{1/2}&space;}{R_{c}^{3/2}\Omega&space;}" title="r=\frac{a U^{1/2} \nu^{1/2} }{R_{c}^{3/2}\Omega }" />
+The radius of the fiber is obtain from the simple equilibrium, at a given extension from the extruding nozzle, between the centrifugal force pulling the fiber and the elongational viscous stress in the fiber section keeping it together. The final radius is therefore the radius computed at the end of the process when the fiber attains the reservoir, i.e. at the reservoir radius.
 
-
-&nbsp;
-
-
-- Continuity equation : <img src="https://latex.codecogs.com/gif.latex?\partial&space;_{x}(VA)&space;=&space;0" title="\partial _{x}(VA) = 0" />
+- Continuity equation (mass conservation) : <img src="https://latex.codecogs.com/gif.latex?\partial&space;_{x}(VA)&space;=&space;0" title="\partial _{x}(VA) = 0" />
 
 <img src="https://latex.codecogs.com/gif.latex?\Rightarrow&space;U&space;\pi&space;r_{0}^{2}&space;=&space;V&space;\pi&space;r^{2}" title="\Rightarrow U \pi r_{0}^{2} = V \pi r^{2}" />
 
@@ -51,22 +39,22 @@ Centrigugal force : <img src="https://latex.codecogs.com/gif.latex?F_{c}&space;=
 
 Equal those 2 forces : <img src="https://latex.codecogs.com/gif.latex?F_{v}&space;=&space;F_{c}" title="F_{v} = F_{c}" />
 
-Besides, we want to predict the final radius : 
+Besides, we want to predict the final radius :
 
 So, <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}&space;-&space;s_{0}" title="x = R_{c} - s_{0}" />
 
-Approximation : <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}" title="x = R_{c}" /> 
+Approximation : <img src="https://latex.codecogs.com/gif.latex?x&space;=&space;R_{c}" title="x = R_{c}" /> , because <img src="https://latex.codecogs.com/gif.latex?R_{c}&space;\gg&space;s_{0}" title="R_{c} \gg s_{0}" />
 
-because <img src="https://latex.codecogs.com/gif.latex?R_{c}&space;\gg&space;s_{0}" title="R_{c} \gg s_{0}" />
+With all this, we obtain the final radius of the fiber:
 
-With all this, we find again the formula to get the final radius of the fiber.
+<img src="https://latex.codecogs.com/gif.latex?r=\frac{a&space;U^{1/2}&space;\nu^{1/2}&space;}{R_{c}^{3/2}\Omega&space;}" title="r=\frac{a U^{1/2} \nu^{1/2} }{R_{c}^{3/2}\Omega }" />
 
 
 ## Glossary
 
 a : Radius of the orifice (m)
 
-A : Jet cross sectionnal area (<img src="https://latex.codecogs.com/gif.latex?m^{2}" title="m^{2}" />) 
+A : Jet cross sectionnal area (<img src="https://latex.codecogs.com/gif.latex?m^{2}" title="m^{2}" />)
 
 r : Final radius of the fiber (m)
 

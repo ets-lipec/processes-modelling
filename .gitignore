@@ -1,3 +1,7 @@
+# excluded folders
+graphics*
+data_files*
+
 .DS_store
 # Byte-compiled / optimized / DLL files
 __pycache__/

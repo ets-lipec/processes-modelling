@@ -1,8 +1,8 @@
 Polymers:
   Name: 'Polypropylene'
-  Viscosity: 0.63
-  Density: 900
-  Surface Tension: 0.0436
+  Viscosity: 0.63 # Pa.s
+  Density: 900 # kg/m3
+  Surface Tension: 0.0436 # kg/s2
 
   Values used by Mellado to compare with experiment:
     Name: "Mellado's polymer PLA"
@@ -24,7 +24,7 @@ Machines:
   Collector Radius: 0.3302
   Reservoir Radius: 0.06985
   Angular Velocity: 57.5
-  
+
   Values used by Mellado to compare with experiment:
     Name: "Mellado's machine"
     Orifice Radius: 0.000170
@@ -55,11 +55,10 @@ Experimental Datas:
     - 420
     - 480
   Final Radius:
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-    - 
-  
+    -
+    -
+    -
+    -
+    -
+    -
+    -
