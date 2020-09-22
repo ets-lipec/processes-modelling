@@ -21,3 +21,4 @@ class PointGraph:
             axes.set_ylabel(dataset["y_legend"], fontsize=16)
             axes.set_title(dataset["title"], fontsize=16, y=1.)
             plt.savefig(dataset["save_as"], format="pdf")
+            plt.show()
